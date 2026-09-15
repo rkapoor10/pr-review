@@ -31,6 +31,7 @@
   a:hover{text-decoration:underline}
   code{font-family:var(--mono);font-size:.855em;background:var(--panel);
     border:1px solid var(--bd2);border-radius:5px;padding:.12em .36em}
+
   /* ---------- shell ---------- */
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px 120px}
   header.top{border-bottom:1px solid var(--bd);background:var(--panel);
@@ -45,6 +46,7 @@
     border:1px solid var(--bd);border-radius:999px;padding:6px 11px;white-space:nowrap}
   .chip b{color:var(--tx);font-weight:600}
   .chip.ok{color:var(--green);border-color:var(--green)}
+
   nav.tabs{display:flex;gap:2px;max-width:1180px;margin:0 auto;padding:0 24px}
   nav.tabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
     color:var(--tx2);font:600 14px/1 inherit;padding:13px 16px;cursor:pointer;
@@ -53,8 +55,10 @@
   nav.tabs button[aria-selected="true"]{color:var(--tx);border-bottom-color:#fd8c73}
   nav.tabs .n{font:600 11px/1 var(--mono);background:var(--panel2);border:1px solid var(--bd);
     border-radius:999px;padding:3px 7px;color:var(--tx2)}
+
   section.panel{display:none;padding-top:34px}
   section.panel.on{display:block}
+
   /* ---------- typography ---------- */
   h2{font-size:20px;margin:40px 0 4px;font-weight:650;letter-spacing:-.01em;
     padding-bottom:8px;border-bottom:1px solid var(--bd)}
@@ -66,6 +70,7 @@
   ul{margin:0 0 14px;padding-left:22px}
   li{margin-bottom:7px}
   .lede{font-size:16.5px;line-height:1.6;color:var(--tx)}
+
   /* ---------- callouts ---------- */
   .callout{border:1px solid var(--bd);border-left-width:3px;border-radius:7px;
     background:var(--panel);padding:14px 16px;margin:0 0 18px}
@@ -76,6 +81,7 @@
   .note{border-left-color:var(--amber)} .note .lbl{color:var(--amber)}
   .clear{border-left-color:var(--green)} .clear .lbl{color:var(--green)}
   .info{border-left-color:var(--purple)} .info .lbl{color:var(--purple)}
+
   /* ---------- tables ---------- */
   table{width:100%;border-collapse:collapse;font-size:13.5px;margin:0 0 20px;
     border:1px solid var(--bd);border-radius:7px;overflow:hidden}
@@ -89,11 +95,13 @@
   tr.test td.fp{color:var(--tx2)}
   .tag{font:600 10px/1 var(--mono);border:1px solid var(--bd);border-radius:4px;
     padding:3px 5px;color:var(--tx2);margin-left:6px;vertical-align:1px}
+
   /* ---------- flow ---------- */
   .flow{font-family:var(--mono);font-size:12.5px;line-height:2;background:var(--panel);
     border:1px solid var(--bd);border-radius:7px;padding:14px 16px;margin:0 0 18px;
     overflow-x:auto;white-space:pre;color:var(--tx2)}
   .flow b{color:var(--tx);font-weight:600}
+
   /* ---------- step cards ---------- */
   .step{border:1px solid var(--bd);border-radius:9px;background:var(--panel2);
     margin:0 0 26px;overflow:hidden}
@@ -104,6 +112,7 @@
   .step .role{font-size:13px;color:var(--tx2);margin:-6px 0 12px}
   .step>.hdr>p:last-child{margin-bottom:16px}
   .step .body{padding:0 18px}
+
   .fileb{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
     background:var(--panel);border:1px solid var(--bd);border-bottom:0;
     border-radius:7px 7px 0 0;padding:8px 12px;margin-top:16px}
@@ -113,6 +122,7 @@
   .fileb .badge.ch{background:var(--add-bd);color:var(--green);border:1px solid var(--add-bd)}
   .fileb .badge.un{background:var(--panel2);color:var(--purple);border:1px solid var(--bd)}
   .fileb .stat{margin-left:auto;font:600 11px/1 var(--mono);color:var(--tx3);white-space:nowrap}
+
   .diff,.srcblk{border:1px solid var(--bd);border-radius:0 0 7px 7px;overflow-x:auto;
     margin:0 0 4px;background:var(--panel2)}
   .diff .ln,.srcblk .ln{display:grid;grid-template-columns:30px 1fr;
@@ -131,11 +141,13 @@
   .srcblk .t{padding:0 12px;color:var(--tx2)}
   .srcblk{border-left:3px solid var(--purple)}
   .cap{font-size:12.5px;color:var(--tx3);margin:6px 0 16px;font-style:italic}
+
   .wtr{background:var(--panel);border:1px solid var(--bd);border-radius:7px;
     padding:12px 15px;margin:0 0 14px;font-size:14px}
   .wtr .lbl{font:700 11px/1 inherit;letter-spacing:.07em;text-transform:uppercase;
     color:var(--tx2);margin-bottom:6px}
   .wtr p:last-child{margin-bottom:0}
+
   footer{border-top:1px solid var(--bd);margin-top:46px;padding-top:20px;
     font-size:12.5px;color:var(--tx3)}
   .toTop{position:fixed;right:22px;bottom:22px;background:var(--panel);color:var(--tx2);
@@ -150,6 +162,7 @@
 </style>
 </head>
 <body>
+
 <header class="top">
   <div class="hd">
     <div class="eyebrow">Pull request review &middot; robust mode</div>
@@ -170,7 +183,1443 @@
     <button role="tab" aria-selected="false" data-t="diff">Diff <span class="n">10 steps</span></button>
   </nav>
 </header>
+
 <div class="wrap">
+
 <!-- ═══════════════════════════ OVERVIEW ═══════════════════════════ -->
 <section class="panel on" id="overview">
+
   <div class="callout blocker">
+    <div class="lbl">&#9632; One confirmed defect &mdash; would block merge</div>
+    <p><b>Org and project identifiers are written as <code>null</code> on the trigger-not-found path.</b>
+    The patch adds a backfill so a response that resolved no trigger does not write nulls over the queued
+    placeholder, but it covers four fields and misses <code>orgIdentifier</code> and
+    <code>projectIdentifier</code>. Activity History filters on both by equality whenever parent-id querying
+    is off, so the single surviving row disappears from the screen entirely. This lands on the exact path the
+    PR description names as the confirmed repro.
+    <a href="#s-defect" data-jump="diff">Jump to the evidence &rarr;</a></p>
+  </div>
+
+  <div class="callout note">
+    <div class="lbl">&#9632; Two smaller points</div>
+    <p><b><code>MAX_ATTEMPTS</code> does not achieve its stated purpose.</b> It replaced the two iterator filter
+    literals only. Both give-up branches still read a literal <code>2</code>, so the attempt limit and the
+    give-up branch can still drift apart &mdash; which is the reason the description gives for extracting it.</p>
+    <p><b><code>buildEventHistory</code> is a public utility with an implicit precondition.</b> It derives
+    <code>exceptionOccurred</code> as <code>!isSkippedResponse(status)</code>, so any success status would record
+    an exception. Both current callers pass a failure or a skip, so nothing is broken today.</p>
+  </div>
+
+  <h2>TLDR</h2>
+  <p class="lede">A custom webhook whose payload did not match the trigger's conditions was reported as a red
+  <b>Failed</b> in the trigger's Activity History, and often stayed stuck on &ldquo;Trigger event was queued&rdquo;
+  forever. We reclassified the seven condition-mismatch statuses as skips, and routed every path that abandons an
+  event through one write that replaces the queued placeholder row. A user firing a non-matching webhook now sees a
+  <b>Skipped</b> chip with the real reason, and a dropped event shows a real failure instead of a permanent
+  &ldquo;queued&rdquo;.</p>
+
+  <h2>What changed (high level)</h2>
+  <p>Two reported outcomes change on the Activity History screen for custom webhook triggers. An event that was
+  evaluated and simply did not satisfy the configured payload, header, metadata, JEXL, filepath, action, or event
+  conditions is now Skipped rather than Failed, is findable under the Skipped status filter, and no longer counts
+  toward the trigger's activation count or its &ldquo;last activation&rdquo; summary. Separately, five code paths
+  that used to stop processing an event without recording anything now record a real terminal outcome, so the row
+  the webhook endpoint creates is no longer left at &ldquo;queued&rdquo; as the event's permanent state.</p>
+  <p>Misconfiguration signals stay Failed on purpose: no enabled trigger found, no matching trigger for repo,
+  event-signature mismatches, and polling events with no versions. A row still sitting at <code>QUEUED</code> also
+  stays Failed, because it means the event was accepted and then never processed. The git-provider webhook path is
+  untouched.</p>
+
+  <h2>How it was changed</h2>
+  <p>Status classification is decided by exclusion. One shared set lists the skipped statuses, and anything not in
+  that set or the success set falls through to Failed. Adding the seven condition-mismatch statuses to the skipped
+  set therefore fixes the status chip, the status filter, and the &ldquo;no execution was attempted&rdquo; flag in
+  one edit.</p>
+  <p>The orphaned-placeholder fix is a consolidation. Both event processors previously wrote history rows inline at
+  some call sites and skipped it entirely at others, and one path used a plain insert that added a second row next
+  to the placeholder instead of replacing it. Every terminal path in both processors now calls one private method
+  that keys the write to the event's correlation id and upserts. A new shared helper holds the query construction
+  and the fallback that copies request-supplied identifiers onto responses that could not resolve a trigger.</p>
+  <p>The webhook endpoint's placeholder write changed from an overwriting upsert to an insert-only one. The
+  placeholder is written after the event is handed to the consumer, because the correlation id comes back from that
+  call, so a slow placeholder write could previously land after the processor had already recorded the real outcome
+  and reset the row to queued.</p>
+
+  <h2>Code implementation details</h2>
+  <ul>
+    <li><b><code>TriggerEventResponse.java</code> &mdash; the shared status contract</b>: adds the seven
+      <code>NO_MATCHING_TRIGGER_FOR_*</code> condition-mismatch statuses to <code>SKIPPED_STATUSES</code>, which is
+      read by the status chip, the status filter, the response-level <code>exceptionOccurred</code> flag, and the
+      derived failed set.</li>
+    <li><b><code>TriggerEventHistoryHelper.java</code> &mdash; new shared utility class</b>: holds the correlation-id
+      query used by every writer of an event's row, a fallback that copies the request's trigger, pipeline, scope,
+      and type onto a response that resolved no trigger, and a builder for outcomes that have no response to map
+      from, such as an exception thrown before any trigger was found.</li>
+    <li><b><code>TriggerWebhookEventDetails.java</code> &mdash; new interface</b>: lets one helper read either
+      in-flight event entity. The two ingestion paths keep their pending events in different collections but report
+      them through the same history row.</li>
+    <li><b><code>TriggerEventHistoryRepositoryCustomImpl.java</code></b>: adds an insert-only
+      <code>insertIfAbsent</code> built from <code>$setOnInsert</code>, widens the existing <code>upsert</code> to
+      also persist headers, trigger name, polling doc id, build source type, and build, and moves the identifier
+      writes into one method shared by both.</li>
+    <li><b><code>NGTriggerWebhookConfigResourceImpl.java</code></b>: writes the queued placeholder through
+      <code>insertIfAbsent</code> instead of <code>upsert</code>, and marks it as no execution attempted.</li>
+    <li><b><code>TriggerCustomWebhookExecutionServiceImpl.java</code> and
+      <code>TriggerWebhookExecutionServiceImpl.java</code></b>: route the normal, discard,
+      exception-past-retry, and trigger-not-found paths through one <code>recordEventOutcome</code> method, and
+      replace the plain insert in the trigger-not-found branch with that upsert.</li>
+    <li><b><code>TriggerEventResponseHelper.java</code></b>: computes &ldquo;no execution attempted&rdquo; from the
+      whole skipped family instead of an exact match on the single <code>SKIPPED</code> status.</li>
+    <li><b>Tests</b>: pin the intended bucket for all 41 status values so a new status fails until classified,
+      cover the placeholder's insert-only write and its status, cover the duplicate-row repro and the final-attempt
+      exception leak, and cover the skipped family's effect on the activation flag.</li>
+  </ul>
+
+  <h2>Dependency changes</h2>
+  <p>No new external dependencies. <code>BUILD.bazel</code> for the <code>helpers</code> package gains
+  <code>@maven//:org_springframework_data_spring_data_mongodb</code>, because the new helper builds a Spring Data
+  <code>Query</code>.</p>
+
+  <h2>Changed files <span style="font-weight:400;font-size:14px;color:var(--tx3)">&mdash; 19 files, +977 / &minus;56</span></h2>
+  <table>
+    <thead><tr><th>File</th><th style="text-align:right">+</th><th style="text-align:right">&minus;</th></tr></thead>
+    <tbody>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/contracts/src/main/java/io/harness/ngtriggers/beans/response/TriggerEventResponse.java</td><td class="num p">16</td><td class="num m">3</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerCustomWebhookEvent.java</td><td class="num p">2</td><td class="num m">1</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerWebhookEvent.java</td><td class="num p">2</td><td class="num m">1</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerWebhookEventDetails.java<span class="tag">new</span></td><td class="num p">44</td><td class="num m">0</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/BUILD.bazel</td><td class="num p">1</td><td class="num m">0</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventHistoryHelper.java<span class="tag">new</span></td><td class="num p">100</td><td class="num m">0</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelper.java</td><td class="num p">2</td><td class="num m">2</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/resource/NGTriggerWebhookConfigResourceImpl.java</td><td class="num p">20</td><td class="num m">20</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/repositories/custom/TriggerEventHistoryRepositoryCustom.java</td><td class="num p">1</td><td class="num m">0</td></tr>
+      <tr><td class="fp">pipeline-service/modules/ng-triggers/src/main/java/io/harness/repositories/custom/impl/TriggerEventHistoryRepositoryCustomImpl.java</td><td class="num p">53</td><td class="num m">5</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/eventmapper/filters/impl/HeaderTriggerFilterTest.java</td><td class="num p">2</td><td class="num m">1</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventHistoryHelperTest.java<span class="tag">new</span></td><td class="num p">178</td><td class="num m">0</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelperTest.java</td><td class="num p">30</td><td class="num m">0</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventStatusHelperTest.java<span class="tag">new</span></td><td class="num p">213</td><td class="num m">0</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/resource/NGTriggerWebhookConfigResourceImplTest.java<span class="tag">new</span></td><td class="num p">110</td><td class="num m">0</td></tr>
+      <tr><td class="fp">pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerCustomWebhookExecutionServiceImpl.java</td><td class="num p">31</td><td class="num m">11</td></tr>
+      <tr><td class="fp">pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java</td><td class="num p">40</td><td class="num m">12</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/service/src/test/java/io/harness/pms/triggers/webhook/service/TriggerCustomWebhookExecutionServiceImplTest.java</td><td class="num p">99</td><td class="num m">0</td></tr>
+      <tr class="test"><td class="fp">pipeline-service/service/src/test/java/io/harness/pms/triggers/webhook/service/TriggerWebhookExecutionServiceImplTest.java</td><td class="num p">33</td><td class="num m">0</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Coverage closeout</h2>
+  <p>Audited counts: <b>46 hunks across 19 files</b>, of which <b>38 are shown as raw diffs, 8 are accounted for
+  without one, and 0 are missing</b>. All 19 changed files are named. Every hunk in every one of the 10
+  production-source files is shown in full, including the import-only hunks.</p>
+  <p>The 8 hunks without a raw diff are all in new or extended test files:</p>
+  <ul>
+    <li><code>TriggerEventStatusHelperTest.java</code> &mdash; new 213-line file, shown as its one load-bearing
+      test. The rest is the 41-entry <code>expectedClassification()</code> data table plus four smaller assertions,
+      summarized in prose rather than reproduced.</li>
+    <li><code>TriggerEventHistoryHelperTest.java</code> &mdash; new 178-line file, shown as one of six tests. The
+      other five repeat the same arrange-and-assert shape against the same helper.</li>
+    <li><code>NGTriggerWebhookConfigResourceImplTest.java</code> &mdash; new 110-line file, shown as one of two
+      tests. The elided remainder is the mock setup, described in prose, and a second test whose assertions are
+      covered in the resource step.</li>
+    <li><code>TriggerCustomWebhookExecutionServiceImplTest.java</code> &mdash; the shown test's arrange block is
+      collapsed behind a marker, and the second new test is described in prose only.</li>
+    <li><code>TriggerWebhookExecutionServiceImplTest.java</code> &mdash; two import-only hunks adding an assertion
+      import, an owner constant, and <code>ArgumentCaptor</code>.</li>
+  </ul>
+  <p>Three source excerpts appear in the diff section, from <code>HeaderTriggerFilter.java</code>,
+  <code>TriggerEventResponseHelper.java</code>, and <code>NGTriggerEventServiceImpl.java</code>. All three were read
+  at <code>source_sha</code> as evidence and contribute nothing to the counts above. Only the middle one is changed
+  by this PR, and both of its real hunks are shown separately in their own step.</p>
+
+</section>
+
+
+<!-- ═══════════════════════════ CONTEXT ═══════════════════════════ -->
+<section class="panel" id="context">
+
+  <h2>Reviewer frame &mdash; setup</h2>
+  <p>One custom webhook call produces exactly one Activity History row, and two different components write it. The
+  endpoint <code>NGTriggerWebhookConfigResourceImpl</code> writes a <code>QUEUED</code> placeholder synchronously,
+  and an async processor is meant to replace it with the real outcome. Two processors exist and both are in scope:
+  <code>TriggerCustomWebhookExecutionServiceImpl</code> for the queue-based flow and
+  <code>TriggerWebhookExecutionServiceImpl</code> for the iterator-based one.</p>
+  <p>The row is addressed by <code>(accountId, eventCorrelationId)</code>, and that index is <b>not unique</b>, so a
+  plain insert silently produces a duplicate rather than an error. What the reader sees is computed at read time:
+  <code>TriggerEventStatusHelper.toStatus</code> buckets the stored status into <code>SUCCESS</code>,
+  <code>SKIPPED</code>, or <code>FAILED</code> by checking two sets and defaulting everything else to
+  <code>FAILED</code>. The same two sets build the status filter.</p>
+  <p>Activity History reads that row two ways, and which one applies depends on an account setting.
+  <code>NGTriggerEventServiceImpl.formTriggerEventsCriteria</code> filters on <code>parentUniqueId</code> when
+  parent-id querying is enabled, and otherwise filters on <code>accountId</code>, <code>orgIdentifier</code>, and
+  <code>projectIdentifier</code> by equality. This matters for every write in the diff.</p>
+
+  <h2>Affected path</h2>
+  <div class="flow">webhook POST  &rarr;  enqueue returns correlation id  &rarr;  <b>QUEUED placeholder row written</b>
+              &rarr;  processor picks event up  &rarr;  <b>outcome upserted over the same row</b>
+              &rarr;  Activity History reads the row  &rarr;  status bucketed at read time</div>
+  <p>The branches the patch changes are: the processor stops on a discard, the processor stops on an exception it
+  will not retry, the processor resolves no trigger, and the placeholder write races the outcome write.</p>
+
+  <h2>What must remain true</h2>
+  <ul>
+    <li>Every write to an event's history row must select it by both <code>accountId</code> and
+      <code>eventCorrelationId</code>, or a second row appears instead of the placeholder being replaced.</li>
+    <li>A path that stops processing an event permanently must leave a terminal status behind, because the
+      placeholder is otherwise the event's final reported state.</li>
+    <li>The placeholder write must never overwrite a status the processor already recorded.</li>
+    <li>A row must keep values for every field the Activity History query filters on by equality, or the event stops
+      appearing under its own trigger. That set is <code>parentUniqueId</code>, or <code>accountId</code> plus
+      <code>orgIdentifier</code> plus <code>projectIdentifier</code>, plus <code>targetIdentifier</code> and
+      <code>triggerIdentifier</code>.</li>
+    <li>A status not listed in either the success or the skipped set renders as a red failure, so every enum value
+      needs a deliberate bucket.</li>
+  </ul>
+
+  <h2>Decisions the author owns</h2>
+
+  <div class="callout info">
+    <div class="lbl">Stated decision &mdash; where the skipped boundary sits</div>
+    <p>The description draws the line at &ldquo;evaluated and did not match&rdquo; versus &ldquo;misconfigured, so
+    act on it.&rdquo; That is why <code>NO_ENABLED_TRIGGER_FOR_*</code>,
+    <code>NO_MATCHING_TRIGGER_FOR_REPO</code>, <code>NO_MATCHING_TRIGGER_FOR_FOR_EVENT_SIGNATURES</code>, and
+    <code>POLLING_EVENT_WITH_NO_VERSIONS</code> stay Failed. The obligation this creates is a product one: Skipped
+    events also drop out of the activation count and the &ldquo;last activation&rdquo; summary, so a trigger that
+    only ever receives non-matching webhooks will now read as never activated. That is the intent, but it is a
+    visible change to an existing number.</p>
+  </div>
+
+  <div class="callout info">
+    <div class="lbl">Stated decision &mdash; <code>QUEUED</code> stays Failed</div>
+    <p>Reasonable, and tested. One consequence is worth confirming: the placeholder now also writes
+    <code>executionNotAttempted: true</code>, and
+    <code>TriggerFilterHelper.createCriteriaForTriggerEventCountLastNDays</code> excludes rows where that flag is
+    true. So a genuinely dropped event now renders as Failed while being excluded from the activation count, where
+    before it was counted. Defensible, but it is a second unstated change to the same number.</p>
+  </div>
+
+  <div class="callout blocker">
+    <div class="lbl">Implemented decision &mdash; rationale needed: which fields the backfill covers</div>
+    <p><code>prepareForRecording</code> restores <code>triggerIdentifier</code>, <code>targetIdentifier</code>,
+    <code>parentUniqueId</code>, and <code>ngTriggerType</code> from the request, but not
+    <code>orgIdentifier</code> or <code>projectIdentifier</code>. Those last two are also filtered on by equality on
+    the non-parent-id read path, and the response carries null for both when no trigger was resolved.
+    <b>What is the reason for stopping at four fields rather than covering the whole equality-filtered set?</b></p>
+  </div>
+
+  <div class="callout note">
+    <div class="lbl">Implemented decision &mdash; one row per event when several triggers match</div>
+    <p><code>recordEventOutcome</code> is called once per response inside <code>responseList.forEach</code>, and
+    every call targets the same <code>(accountId, eventCorrelationId)</code> row. With more than one matched
+    trigger, only the last response survives. This predates the patch, but centralizing the write makes it a
+    property of the new design rather than an accident of two call sites. <b>Is one row per webhook call the
+    intended contract, or should a multi-trigger match produce one row per trigger?</b></p>
+  </div>
+
+  <h2>Assumptions to verify</h2>
+  <ul>
+    <li>The catch block in the iterator processor assumes <code>processing</code> stays <code>true</code>, so the
+      event is never re-picked and the exception is final. <b>Verified:</b> <code>handle</code> sets
+      <code>updateTriggerEventProcessingStatus(event, true)</code> on entry, the catch block only bumps
+      <code>attemptCount</code>, and both iterator filters require <code>processing</code> to be
+      <code>false</code>.</li>
+    <li>The two processors assume opposite retry semantics for the exception path, and the patch is consistent with
+      each. The queue-based one resets status to <code>QUEUED</code> and so records only on the final attempt; the
+      iterator-based one cannot be retried and so records immediately.</li>
+    <li><code>insertIfAbsent</code> assumes <code>TriggerEventHistoryRepositoryCustomImpl</code> is the only
+      implementor. <b>Confirmed.</b></li>
+  </ul>
+
+  <h2>Tests &mdash; what the frame still leaves uncovered</h2>
+  <p><code>TriggerEventStatusHelperTest</code> is the strongest thing in the PR, and it addresses a root cause
+  rather than a symptom. <code>testEveryFinalStatusIsDeliberatelyClassified</code> enumerates the enum and fails on
+  any value absent from an explicit expectation map, which directly guards the &ldquo;FAILED by elimination&rdquo;
+  constraint that caused the original bug. The <code>executionNotAttempted</code> test iterates the whole skipped
+  set rather than listing statuses, so it cannot fall behind the set it is guarding.</p>
+  <ul>
+    <li><b>The query key is never asserted at the wiring level.</b> Every service test verifies with
+      <code>any()</code> in the <code>Query</code> position, so no test would catch <code>recordEventOutcome</code>
+      being changed to key the write differently &mdash; which is the precise mutation that caused the original
+      duplicate row. <code>byCorrelationId</code> is tested in isolation, so the coverage is one composition step
+      short. Capturing the <code>Query</code> in one of the two <code>recordEventOutcome</code> tests and asserting
+      its two criteria would close it.</li>
+    <li><b><code>insertIfAbsent</code> has no repository-level test.</b>
+      <code>.cursor/rules/test-before-confirm.mdc</code> asks for a test file per changed source, and
+      <code>TriggerEventHistoryRepositoryCustomImpl</code> has none in this PR. The insert-only semantics and the
+      five newly <code>$set</code> fields on <code>upsert</code> are asserted only indirectly through mocks that
+      cannot observe <code>$set</code> versus <code>$setOnInsert</code>. This is the layer where the ordering-race
+      fix actually lives.</li>
+    <li><b>The two discard branches are untested.</b> B2 and B4 in the description each got a
+      <code>recordEventOutcome</code> call and no test, including the <code>isEmpty(responseList)</code> branch that
+      routes through <code>buildEventHistory</code> rather than <code>toEntity</code>.</li>
+    <li><b>The trigger-not-found branch is tested on one processor only.</b> The queue-based impl has
+      <code>testProcessMessageWithNoMatchingTriggerOverwritesQueuedPlaceholder</code>; the iterator impl's
+      <code>handleTriggerNotFoundCase</code> had the identical <code>save()</code> bug and has no equivalent
+      test.</li>
+    <li><b>No test asserts org and project survive the write</b>, which is why the defect above is green. Adding
+      those two assertions next to the existing <code>triggerIdentifier</code> and <code>targetIdentifier</code>
+      ones is the cheapest way to pin it.</li>
+    <li><b>Mockito usage</b>, per <code>.harness/rules/review.md</code>:
+      <code>NGTriggerWebhookConfigResourceImplTest.setUp</code> stubs
+      <code>toNGTriggerWebhookEventForCustom</code> with seven <code>any()</code> matchers and
+      <code>isEnabled</code> with two, and <code>TriggerCustomWebhookExecutionServiceImplTest</code> stubs with
+      <code>any()</code> where the neighbouring exception test uses <code>eq(...)</code>. Tightening the stubs
+      would make these tests fail on an argument change rather than silently keep passing.</li>
+  </ul>
+  <p>Constructor injection, also from that rules file, is worth one note: the two processors use
+  <code>@Inject</code> field injection, but that predates the PR and no new injected field was added, so there is
+  nothing to act on here.</p>
+
+  <h2>Review sources</h2>
+  <table>
+    <thead><tr><th style="width:230px">Repository guidance</th><th>Trigger and what it drove</th></tr></thead>
+    <tbody>
+      <tr><td class="fp">.harness/rules/review.md</td><td>New Java code and new Mockito tests. Drives the
+        constructor-injection check, the <code>any()</code>-matcher check on stubbing, the separation of business
+        logic from data access, and the coverage prompt.</td></tr>
+      <tr><td class="fp">AGENTS.md</td><td>Java and Bazel edits. Supplies the Bazel-via-Make build rule, the
+        <code>make codeformat</code> and <code>make check</code> gates, and the feature-flag convention.</td></tr>
+      <tr><td class="fp">pipeline-service/Agents.md</td><td>Paths under <code>pipeline-service/</code>. Confirms
+        <code>modules/ng-triggers/</code> owns the trigger system and gives the module's test command.</td></tr>
+      <tr><td class="fp">.cursor/rules/test-before-confirm.mdc</td><td>Changed Java sources. Requires a matching
+        test file per changed source, which is how the repository-level gap above was found.</td></tr>
+    </tbody>
+  </table>
+
+</section>
+
+
+<!-- ═══════════════════════════ DIFF ═══════════════════════════ -->
+<section class="panel" id="diff">
+
+  <div class="callout info">
+    <div class="lbl">How to read this section</div>
+    <p>Hunks are ordered by review value, not by file. A step may jump between files or club several hunks when they
+    are one decision. Green and red lines are this PR's changes. Purple-edged blocks marked
+    <b>unchanged at source_sha</b> are existing code quoted as evidence &mdash; they are not part of the diff.</p>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Start here</div>
+      <h3>The one-line edit that is the whole classification fix</h3>
+      <p class="role">the shared status contract</p>
+      <p>I'd start here because this set is the PR's first half. Because <code>toStatus</code> decides
+      <code>FAILED</code> by elimination, and <code>getFailedStatus()</code> is computed as the complement of these
+      two sets, adding a status here simultaneously changes the chip, the status filter, and the response-level
+      <code>exceptionOccurred</code> flag.</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>Whether all seven added statuses really mean &ldquo;we evaluated the trigger and the event did not
+        match,&rdquo; as opposed to &ldquo;the trigger was not set up right.&rdquo;
+        <code>NO_MATCHING_TRIGGER_FOR_EVENT_ACTION</code> and
+        <code>NO_MATCHING_TRIGGER_FOR_FOR_EVENT_CONDITION</code> are the two worth a second look, since an action or
+        event mismatch can also be read as the caller addressing the wrong trigger.</p></div>
+      <div class="callout note"><div class="lbl">Flag</div>
+        <p>This set is in the <code>contracts</code> module and is read by four separate behaviors, so the blast
+        radius is wider than the Activity History chip. The <code>exceptionOccurred</code> consequence is real and
+        intended &mdash; see the <code>HeaderTriggerFilterTest</code> step below. No other concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/contracts/src/main/java/io/harness/ngtriggers/beans/response/TriggerEventResponse.java" data-stat="hunk 2 of 2">
+   public static final Set<FinalStatus> SUCCESS_STATUSES =
+       EnumSet.of(NEW_ARTIFACT_EVENT_PROCESSED, NEW_MANIFEST_EVENT_PROCESSED, TRIGGER_CONFIRMATION_SUCCESSFUL,
+           TARGET_EXECUTION_REQUESTED, MERGE_QUEUE_CHECKS_CANCELED);
+ 
+   // MERGE_QUEUE_CHECKS_ALREADY_RUNNING is a suppressed duplicate, not an outcome - nothing ran, so it belongs with
+   // SKIPPED rather than SUCCESS.
+-  public static final Set<FinalStatus> SKIPPED_STATUSES =
+-      EnumSet.of(TRIGGER_DID_NOT_MATCH_EVENT_CONDITION, TRIGGER_DID_NOT_MATCH_METADATA_CONDITION,
+-          TRIGGER_DID_NOT_MATCH_ARTIFACT_JEXL_CONDITION, SKIPPED, MERGE_QUEUE_CHECKS_ALREADY_RUNNING);
++  //
++  // The NO_MATCHING_TRIGGER_FOR_* entries mean the trigger was evaluated and the event did not satisfy the configured
++  // conditions. Nothing failed, so they must not be reported as failures.
++  public static final Set<FinalStatus> SKIPPED_STATUSES = EnumSet.of(TRIGGER_DID_NOT_MATCH_EVENT_CONDITION,
++      TRIGGER_DID_NOT_MATCH_METADATA_CONDITION, TRIGGER_DID_NOT_MATCH_ARTIFACT_JEXL_CONDITION, SKIPPED,
++      MERGE_QUEUE_CHECKS_ALREADY_RUNNING, NO_MATCHING_TRIGGER_FOR_PAYLOAD_CONDITIONS,
++      NO_MATCHING_TRIGGER_FOR_HEADER_CONDITIONS, NO_MATCHING_TRIGGER_FOR_METADATA_CONDITIONS,
++      NO_MATCHING_TRIGGER_FOR_JEXL_CONDITIONS, NO_MATCHING_TRIGGER_FOR_FILEPATH_CONDITIONS,
++      NO_MATCHING_TRIGGER_FOR_EVENT_ACTION, NO_MATCHING_TRIGGER_FOR_FOR_EVENT_CONDITION);
+ 
+   public static Set<FinalStatus> FAILED_NOTIFICATION_STATUS = EnumSet.of(SCM_SERVICE_CONNECTION_FAILED, INVALID_PAYLOAD,
+      </script>
+      <p class="cap">The seven matching static imports arrive in the same file's import hunk.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/contracts/src/main/java/io/harness/ngtriggers/beans/response/TriggerEventResponse.java" data-stat="hunk 1 of 2 &middot; imports">
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NEW_MANIFEST_EVENT_PROCESSED;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_EVENT_ACTION;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_FILEPATH_CONDITIONS;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_FOR_EVENT_CONDITION;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_HEADER_CONDITIONS;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_JEXL_CONDITIONS;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_METADATA_CONDITIONS;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.NO_MATCHING_TRIGGER_FOR_PAYLOAD_CONDITIONS;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SCM_SERVICE_CONNECTION_FAILED;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SKIPPED;
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The activation count half of the same fix</h3>
+      <p class="role">response-to-entity mapping</p>
+      <p>The set edit above only reaches the stored <code>executionNotAttempted</code> flag if this line stops
+      matching on one status.</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>That flipping this from one status to the whole family is what you want for the activation count, given
+        the count query excludes rows where the flag is true.</p></div>
+      <div class="callout clear"><div class="lbl">Flag</div><p>No concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelper.java" data-stat="hunk 2 of 2">
+         .triggerIdentifier(response.getTriggerIdentifier())
+         .triggerName(response.getTriggerName())
+         .targetExecutionSummary(response.getTargetExecutionSummary())
+         .pollingDocId(response.getPollingDocId())
+         .buildSourceType(response.getBuildSourceType())
+-        .executionNotAttempted(SKIPPED.equals(response.getFinalStatus()))
++        .executionNotAttempted(isSkippedResponse(response.getFinalStatus()))
+         .build(response.getBuild())
+         .ngTriggerType(response.getNgTriggerType())
+         .triggerSubType(response.getTriggerSubType() == null ? null : response.getTriggerSubType())
+         .build();
+   }
+      </script>
+      <p class="cap">The import hunk swaps the now-unused single-status import for the predicate.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelper.java" data-stat="hunk 1 of 2 &middot; imports">
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SCM_SERVICE_CONNECTION_FAILED;
+-import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SKIPPED;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.TARGET_DID_NOT_EXECUTE;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.TARGET_EXECUTION_REQUESTED;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.TRIGGER_CONFIRMATION_FAILED;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.TRIGGER_CONFIRMATION_SUCCESSFUL;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.VALIDATION_FAILED_FOR_TRIGGER;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.isSkippedResponse;
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The shared helper, and the backfill that needs another look</h3>
+      <p class="role">new shared utility</p>
+      <p>This is where the second half of the PR lives. <code>byCorrelationId</code> is the single definition of
+      &ldquo;this event's row,&rdquo; and <code>backfillRequestScopedFields</code> is what stops the upsert writing a
+      resolution failure's nulls over values the placeholder already had.</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>The field list in <code>backfillRequestScopedFields</code> against the set of fields Activity History
+        filters on by equality.</p></div>
+      <div class="callout blocker"><div class="lbl">Flag &mdash; this is the one thing I would not merge as-is</div>
+        <p>The backfill covers <code>triggerIdentifier</code>, <code>targetIdentifier</code>,
+        <code>parentUniqueId</code>, and <code>ngTriggerType</code>, but not <code>orgIdentifier</code> or
+        <code>projectIdentifier</code>. Those two are filtered on by equality whenever parent-id querying is off,
+        and <code>upsert</code> writes them unconditionally. Details and evidence in the next step.</p>
+        <p>Second, smaller point: <code>buildEventHistory</code> derives <code>exceptionOccurred</code> as
+        <code>!isSkippedResponse(finalStatus)</code>, so passing any success status would record an exception. Both
+        current callers pass a failure or a skip, so nothing is broken, but this is a <code>public</code> method on a
+        <code>@UtilityClass</code> in a shared <code>helpers</code> package and the next caller will not know that.
+        Worth either asserting the precondition or deriving the flag from the success set as well.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventHistoryHelper.java" data-stat="new file &middot; +100">
++  /**
++   * The row for an event is identified by its correlation id, so every write to it has to select it the same way -
++   * anything else adds a second row instead of replacing the queued one.
++   */
++  public Query byCorrelationId(String accountId, String eventCorrelationId) {
++    return new Query(Criteria.where(TriggerEventHistoryKeys.accountId)
++                         .is(accountId)
++                         .and(TriggerEventHistoryKeys.eventCorrelationId)
++                         .is(eventCorrelationId));
++  }
++
++  /**
++   * Keys the row to the event and fills in what the response could not carry. Call on every outcome before writing it.
++   */
++  public void prepareForRecording(TriggerEventHistory triggerEventHistory, TriggerWebhookEventDetails event) {
++    triggerEventHistory.setEventCorrelationId(event.getUuid());
++    backfillRequestScopedFields(triggerEventHistory, event);
++  }
++
++  /**
++   * Builds the row for outcomes with no {@link TriggerEventResponse} to map from, such as an exception thrown before
++   * any trigger was resolved.
++   */
++  public TriggerEventHistory buildEventHistory(
++      TriggerWebhookEventDetails event, FinalStatus finalStatus, String message) {
++    return TriggerEventHistory.builder()
++        .accountId(event.getAccountId())
++        .orgIdentifier(event.getOrgIdentifier())
++        .projectIdentifier(event.getProjectIdentifier())
++        .targetIdentifier(event.getPipelineIdentifier())
++        .triggerIdentifier(event.getTriggerIdentifier())
++        .eventCorrelationId(event.getUuid())
++        .payload(event.getPayload())
++        .headers(event.getHeaders())
++        .eventCreatedAt(event.getCreatedAt())
++        .parentUniqueId(event.getParentUniqueId())
++        .finalStatus(finalStatus.toString())
++        .message(message)
++        .exceptionOccurred(!isSkippedResponse(finalStatus))
++        .executionNotAttempted(isSkippedResponse(finalStatus))
++        .ngTriggerType(NGTriggerType.WEBHOOK)
++        .build();
++  }
++
++  /**
++   * A response with no resolved trigger carries no trigger or pipeline identifier, and Activity History filters on
++   * both by equality. Fall back to what the request recorded so the event stays visible under its own trigger.
++   */
++  private void backfillRequestScopedFields(TriggerEventHistory triggerEventHistory, TriggerWebhookEventDetails event) {
++    if (isEmpty(triggerEventHistory.getTriggerIdentifier())) {
++      triggerEventHistory.setTriggerIdentifier(event.getTriggerIdentifier());
++    }
++    if (isEmpty(triggerEventHistory.getTargetIdentifier())) {
++      triggerEventHistory.setTargetIdentifier(event.getPipelineIdentifier());
++    }
++    if (isEmpty(triggerEventHistory.getParentUniqueId())) {
++      triggerEventHistory.setParentUniqueId(event.getParentUniqueId());
++    }
++    if (triggerEventHistory.getNgTriggerType() == null) {
++      triggerEventHistory.setNgTriggerType(NGTriggerType.WEBHOOK);
++    }
++  }
++}
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 4 — DEFECT -->
+  <div class="step" id="s-defect" style="border-color:var(--red)">
+    <div class="hdr">
+      <div class="stepno" style="color:var(--red)">Next &middot; confirmed defect</div>
+      <h3>Org and project are written as null on the trigger-not-found path</h3>
+      <p>This is the same bug the backfill above was added to fix, on two fields it does not cover. It lands on the
+      exact path the PR description names as the confirmed repro.</p>
+    </div>
+    <div class="body">
+      <p>The two unconditional <code>$set</code> lines that carry it are unchanged, shown here as the surrounding
+      context of the hunk.</p>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/repositories/custom/impl/TriggerEventHistoryRepositoryCustomImpl.java" data-stat="hunk 1 of 2">
+   @Override
+   public TriggerEventHistory upsert(TriggerEventHistory triggerEventHistory, Query query) {
+     Update update = new Update();
+ 
+     update.set(TriggerEventHistoryKeys.accountId, triggerEventHistory.getAccountId());
+     update.set(TriggerEventHistoryKeys.orgIdentifier, triggerEventHistory.getOrgIdentifier());
+     update.set(TriggerEventHistoryKeys.projectIdentifier, triggerEventHistory.getProjectIdentifier());
+     update.set(TriggerEventHistoryKeys.targetIdentifier, triggerEventHistory.getTargetIdentifier());
+     update.set(TriggerEventHistoryKeys.payload, triggerEventHistory.getPayload());
++    update.set(TriggerEventHistoryKeys.headers, triggerEventHistory.getHeaders());
+     update.set(TriggerEventHistoryKeys.eventCreatedAt, triggerEventHistory.getEventCreatedAt());
+     update.set(TriggerEventHistoryKeys.finalStatus, triggerEventHistory.getFinalStatus());
+     update.set(TriggerEventHistoryKeys.message, triggerEventHistory.getMessage());
+     update.set(TriggerEventHistoryKeys.exceptionOccurred, triggerEventHistory.isExceptionOccurred());
+     update.set(TriggerEventHistoryKeys.executionNotAttempted, triggerEventHistory.getExecutionNotAttempted());
+     update.set(TriggerEventHistoryKeys.triggerIdentifier, triggerEventHistory.getTriggerIdentifier());
++    update.set(TriggerEventHistoryKeys.triggerName, triggerEventHistory.getTriggerName());
++    update.set(TriggerEventHistoryKeys.pollingDocId, triggerEventHistory.getPollingDocId());
++    update.set(TriggerEventHistoryKeys.buildSourceType, triggerEventHistory.getBuildSourceType());
++    update.set(TriggerEventHistoryKeys.build, triggerEventHistory.getBuild());
+     update.set(TriggerEventHistoryKeys.validUntil, triggerEventHistory.getValidUntil());
+     update.set(TriggerEventHistoryKeys.targetExecutionSummary, triggerEventHistory.getTargetExecutionSummary());
+     update.set(TriggerEventHistoryKeys.createdAt, System.currentTimeMillis());
+     update.set(TriggerEventHistoryKeys.ngTriggerType, triggerEventHistory.getNgTriggerType());
+     update.set(TriggerEventHistoryKeys.triggerSubType, triggerEventHistory.getTriggerSubType());
+-    if (isEmpty(triggerEventHistory.getUniqueId())) {
+-      update.setOnInsert(TriggerEventHistoryKeys.uniqueId, generateUuid());
+-    }
++    setIdentifiersOnInsert(update, triggerEventHistory);
++    mongoTemplate.upsert(query, update, TriggerEventHistory.class);
++    return triggerEventHistory;
++  }
++
+      </script>
+
+      <h4>The chain is four steps, all in unchanged code except the last</h4>
+      <p><b>First</b>, a condition mismatch resolves no trigger, so the failure response is built with a null trigger
+      entity.</p>
+      <script type="text/java" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/eventmapper/filters/impl/HeaderTriggerFilter.java">
+  @Override
+  public TriggerEventResponse getFailureResponse(FilterRequestData filterRequestData) {
+    return TriggerEventResponseHelper.toResponse(NO_MATCHING_TRIGGER_FOR_HEADER_CONDITIONS,
+        filterRequestData.getWebhookPayloadData().getOriginalEvent(), null, null,
+        "No Trigger matched conditions for payload event for Account: " + filterRequestData.getAccountId(), null);
+  }
+      </script>
+
+      <p><b>Second</b>, that null entity makes the response's org and project null, while
+      <code>parentUniqueId</code> gets a fallback.</p>
+      <script type="text/java" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelper.java">
+            .orgIdentifier(ngTriggerEntity == null ? null : ngTriggerEntity.getOrgIdentifier())
+            .projectIdentifier(ngTriggerEntity == null ? null : ngTriggerEntity.getProjectIdentifier())
+            .parentUniqueId(
+                ngTriggerEntity == null ? triggerWebhookEvent.getAccountId() : ngTriggerEntity.getParentUniqueId())
+            .targetIdentifier(ngTriggerEntity == null ? null : ngTriggerEntity.getTargetIdentifier())
+            // ...
+            .triggerIdentifier(ngTriggerEntity == null ? null : ngTriggerEntity.getIdentifier())
+      </script>
+
+      <p><b>Third</b>, Activity History filters on org and project by equality whenever parent-id querying is
+      off.</p>
+      <script type="text/java" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/service/impl/NGTriggerEventServiceImpl.java">
+    Criteria criteria = new Criteria();
+    if (isParentIdQueryingEnabled) {
+      criteria.and(TriggerEventHistoryKeys.parentUniqueId).is(scope.getParentUniqueId());
+    } else {
+      criteria.and(TriggerEventHistoryKeys.accountId).is(scope.getAccountIdentifier());
+      criteria.and(TriggerEventHistoryKeys.orgIdentifier).is(scope.getOrgIdentifier());
+      criteria.and(TriggerEventHistoryKeys.projectIdentifier).is(scope.getProjectIdentifier());
+    }
+      </script>
+
+      <p><b>Fourth</b>, the patch replaces the insert on that path with an upsert over the placeholder, so those
+      nulls now land on the row that the user actually reads.</p>
+
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>Whether <code>orgIdentifier</code> and <code>projectIdentifier</code> belong in
+        <code>backfillRequestScopedFields</code> alongside the other four.</p></div>
+
+      <div class="callout blocker">
+        <div class="lbl">Flag &mdash; confirmed defect, and a regression for accounts without parent-id querying</div>
+        <p>Before the patch, this path called <code>save()</code>, which inserted a second row carrying the nulls
+        and left the placeholder intact with correct org and project. The event rendered under the wrong status, but
+        it rendered. After the patch there is one row, correctly statused, with <code>orgIdentifier: null</code> and
+        <code>projectIdentifier: null</code>, so it does not match the non-parent-id criteria at all and disappears
+        from Activity History entirely.</p>
+        <p><code>parentUniqueId</code> escapes this only because <code>upsert</code> writes it with
+        <code>$setOnInsert</code> rather than <code>$set</code>, which is an accident of the identifier helper
+        rather than a deliberate guard. The new test asserts <code>triggerIdentifier</code> and
+        <code>targetIdentifier</code> on the captured row but not org or project, which is why it passes. Adding
+        those two fields to the backfill, plus the two assertions, would close it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3><code>insertIfAbsent</code> and the shared identifier writes</h3>
+      <p class="role">the new insert-only write, and the identifier method both methods now share</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>That <code>$setOnInsert</code> on every field is genuinely what the placeholder wants, and that pulling
+        <code>parentUniqueId</code> resolution into a method called from both writers does not add a scope lookup to
+        a synchronous request path that did not have one. It does not &mdash; the placeholder write already went
+        through <code>upsert</code>, which already did that lookup.</p></div>
+      <div class="callout note"><div class="lbl">Flag</div>
+        <p><code>setIdentifiersOnInsert</code> fixes a real latent bug quietly. The old code wrote
+        <code>uniqueId</code> only when the entity carried none, so an entity that <i>did</i> carry one got a row
+        with no <code>uniqueId</code> at all. Worth calling out in the description, since it changes existing rows'
+        shape on insert. No other concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/repositories/custom/impl/TriggerEventHistoryRepositoryCustomImpl.java" data-stat="hunks 1&ndash;2 of 2">
++  /**
++   * Writes the row only when no row matches the query. The QUEUED placeholder can land after the processor has already
++   * recorded the outcome, and {@link #upsert} would set the status back to QUEUED and lose it.
++   */
++  @Override
++  public TriggerEventHistory insertIfAbsent(TriggerEventHistory triggerEventHistory, Query query) {
++    Update update = new Update();
++
++    update.setOnInsert(TriggerEventHistoryKeys.accountId, triggerEventHistory.getAccountId());
++    update.setOnInsert(TriggerEventHistoryKeys.orgIdentifier, triggerEventHistory.getOrgIdentifier());
++    update.setOnInsert(TriggerEventHistoryKeys.projectIdentifier, triggerEventHistory.getProjectIdentifier());
++    update.setOnInsert(TriggerEventHistoryKeys.targetIdentifier, triggerEventHistory.getTargetIdentifier());
++    update.setOnInsert(TriggerEventHistoryKeys.payload, triggerEventHistory.getPayload());
++    update.setOnInsert(TriggerEventHistoryKeys.headers, triggerEventHistory.getHeaders());
++    update.setOnInsert(TriggerEventHistoryKeys.eventCreatedAt, triggerEventHistory.getEventCreatedAt());
++    update.setOnInsert(TriggerEventHistoryKeys.finalStatus, triggerEventHistory.getFinalStatus());
++    update.setOnInsert(TriggerEventHistoryKeys.message, triggerEventHistory.getMessage());
++    update.setOnInsert(TriggerEventHistoryKeys.exceptionOccurred, triggerEventHistory.isExceptionOccurred());
++    update.setOnInsert(TriggerEventHistoryKeys.executionNotAttempted, triggerEventHistory.getExecutionNotAttempted());
++    update.setOnInsert(TriggerEventHistoryKeys.triggerIdentifier, triggerEventHistory.getTriggerIdentifier());
++    update.setOnInsert(TriggerEventHistoryKeys.triggerName, triggerEventHistory.getTriggerName());
++    update.setOnInsert(TriggerEventHistoryKeys.pollingDocId, triggerEventHistory.getPollingDocId());
++    update.setOnInsert(TriggerEventHistoryKeys.buildSourceType, triggerEventHistory.getBuildSourceType());
++    update.setOnInsert(TriggerEventHistoryKeys.build, triggerEventHistory.getBuild());
++    update.setOnInsert(TriggerEventHistoryKeys.validUntil, triggerEventHistory.getValidUntil());
++    update.setOnInsert(TriggerEventHistoryKeys.targetExecutionSummary, triggerEventHistory.getTargetExecutionSummary());
++    update.setOnInsert(TriggerEventHistoryKeys.createdAt, System.currentTimeMillis());
++    update.setOnInsert(TriggerEventHistoryKeys.ngTriggerType, triggerEventHistory.getNgTriggerType());
++    update.setOnInsert(TriggerEventHistoryKeys.triggerSubType, triggerEventHistory.getTriggerSubType());
++    setIdentifiersOnInsert(update, triggerEventHistory);
++    mongoTemplate.upsert(query, update, TriggerEventHistory.class);
++    return triggerEventHistory;
++  }
++
++  /**
++   * Both identifiers are always written on insert - the activity list indexes lead with parentUniqueId, so a row
++   * without one is invisible to them. Generate or resolve a value only when the entity does not carry it.
++   */
++  private void setIdentifiersOnInsert(Update update, TriggerEventHistory triggerEventHistory) {
++    update.setOnInsert(TriggerEventHistoryKeys.uniqueId,
++        isEmpty(triggerEventHistory.getUniqueId()) ? generateUuid() : triggerEventHistory.getUniqueId());
+     if (isEmpty(triggerEventHistory.getParentUniqueId())) {
+       Optional<ScopeInfo> scopeInfo = scopeResolutionHelper.getScopeInfoOptional(triggerEventHistory.getAccountId(),
+           triggerEventHistory.getOrgIdentifier(), triggerEventHistory.getProjectIdentifier());
+       String parentUniqueId = null;
+       if (scopeInfo.isPresent()) {
+         parentUniqueId = scopeInfo.get().getUniqueId();
+       } else {
+         log.warn("Parent unique id not found for trigger event history with accountId {} , orgId {}, projectId {}",
+             triggerEventHistory.getAccountId(), triggerEventHistory.getOrgIdentifier(),
+             triggerEventHistory.getProjectIdentifier());
+       }
+       update.setOnInsert(TriggerEventHistoryKeys.parentUniqueId, parentUniqueId);
++    } else {
++      update.setOnInsert(TriggerEventHistoryKeys.parentUniqueId, triggerEventHistory.getParentUniqueId());
+     }
+-    mongoTemplate.upsert(query, update, TriggerEventHistory.class);
+-    return triggerEventHistory;
+   }
+      </script>
+
+      <p class="cap">The interface gains one method.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/repositories/custom/TriggerEventHistoryRepositoryCustom.java" data-stat="hunk 1 of 1">
+   void deleteBatch(Criteria criteria);
+   DeleteResult deleteTriggerEventHistoryForTriggerIdentifier(Criteria criteria);
+   TriggerEventHistory upsert(TriggerEventHistory build, Query query);
++  TriggerEventHistory insertIfAbsent(TriggerEventHistory build, Query query);
+ }
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The placeholder write, and the race it closes</h3>
+      <p class="role">the synchronous endpoint's placeholder row</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>That insert-only is the right call given the write cannot be reordered ahead of the enqueue, since the
+        correlation id is produced by the enqueue. Also the newly added <code>executionNotAttempted(true)</code>,
+        which is what changes the activation count for in-flight and stuck events.</p></div>
+      <div class="callout note"><div class="lbl">Flag</div>
+        <p>No concerns on the mechanism. The <code>executionNotAttempted(true)</code> addition is the unstated second
+        change to the activation count noted in the Context section.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/resource/NGTriggerWebhookConfigResourceImpl.java" data-stat="hunk 4 of 4">
+   private void saveEventInTriggerEventHistory(String accountIdentifier, TriggerWebhookEvent eventEntity, String uuid) {
+-    Query query = new Query(Criteria.where(TriggerEventHistoryKeys.accountId)
+-                                .is(eventEntity.getAccountId())
+-                                .and(TriggerEventHistoryKeys.eventCorrelationId)
+-                                .is(uuid));
++    Query query = byCorrelationId(eventEntity.getAccountId(), uuid);
+ 
+-    triggerEventHistoryRepository.upsert(TriggerEventHistory.builder()
+-                                             .triggerIdentifier(eventEntity.getTriggerIdentifier())
+-                                             .uuid(uuid)
+-                                             .targetIdentifier(eventEntity.getPipelineIdentifier())
+-                                             .accountId(eventEntity.getAccountId())
+-                                             .orgIdentifier(eventEntity.getOrgIdentifier())
+-                                             .projectIdentifier(eventEntity.getProjectIdentifier())
+-                                             .payload(eventEntity.getPayload())
+-                                             .eventCreatedAt(eventEntity.getCreatedAt())
+-                                             .eventCorrelationId(uuid)
+-                                             .finalStatus(String.valueOf(TriggerEventResponse.FinalStatus.QUEUED))
+-                                             .ngTriggerType(NGTriggerType.WEBHOOK)
+-                                             .message("Trigger execution is queued.")
+-                                             .build(),
++    // Insert only: the processor may already have recorded the real outcome, and overwriting would set a finished
++    // event back to QUEUED.
++    triggerEventHistoryRepository.insertIfAbsent(
++        TriggerEventHistory.builder()
++            .triggerIdentifier(eventEntity.getTriggerIdentifier())
++            .uuid(uuid)
++            .targetIdentifier(eventEntity.getPipelineIdentifier())
++            .accountId(eventEntity.getAccountId())
++            .orgIdentifier(eventEntity.getOrgIdentifier())
++            .projectIdentifier(eventEntity.getProjectIdentifier())
++            .payload(eventEntity.getPayload())
++            .eventCreatedAt(eventEntity.getCreatedAt())
++            .eventCorrelationId(uuid)
++            .finalStatus(String.valueOf(TriggerEventResponse.FinalStatus.QUEUED))
++            .ngTriggerType(NGTriggerType.WEBHOOK)
++            .executionNotAttempted(true)
++            .message("Trigger execution is queued.")
++            .build(),
+         query);
+   }
+      </script>
+      <p class="cap">Note that the placeholder builder <i>does</i> set <code>orgIdentifier</code> and
+      <code>projectIdentifier</code> from the request. That is precisely the pair the outcome upsert later overwrites
+      with null on the trigger-not-found path.</p>
+
+      <p>Its three import hunks add the helper's static import and drop the two symbols no longer referenced.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/resource/NGTriggerWebhookConfigResourceImpl.java" data-stat="hunks 1&ndash;3 of 4 &middot; imports">
+ import static io.harness.data.structure.EmptyPredicate.isEmpty;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.byCorrelationId;
+@@
+ import io.harness.ngtriggers.beans.entity.TriggerEventHistory;
+-import io.harness.ngtriggers.beans.entity.TriggerEventHistory.TriggerEventHistoryKeys;
+ import io.harness.ngtriggers.beans.entity.TriggerWebhookEvent;
+@@
+ import lombok.extern.slf4j.Slf4j;
+-import org.springframework.data.mongodb.core.query.Criteria;
+ import org.springframework.data.mongodb.core.query.Query;
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The iterator processor: four terminal paths, one write</h3>
+      <p class="role">the v1 iterator flow</p>
+      <p>These belong in one step because they are one decision: every way out of <code>handle</code> now ends in
+      <code>recordEventOutcome</code>.</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>The catch block most of all. Recording on the first exception is only correct if the event truly cannot be
+        retried, and that rests on <code>processing</code> still being <code>true</code>. It is &mdash;
+        <code>handle</code> sets it on entry and the catch block never clears it, while both iterator filters require
+        <code>processing == false</code>. Note the consequence, which is pre-existing: the event row in
+        <code>triggerWebhookEvents</code> is never deleted on that path either.</p></div>
+      <div class="callout note"><div class="lbl">Flag</div>
+        <p><code>MAX_ATTEMPTS</code> only replaced the two iterator filter literals.
+        <code>handleTriggerNotFoundCase</code> still reads <code>event.getAttemptCount() &lt; 2</code>, and the
+        queue-based processor still reads <code>event.getAttemptCount() == 2</code>. The description's stated reason
+        for extracting the constant &mdash; that the attempt limit and the give-up branch can no longer drift apart
+        &mdash; is therefore not achieved. Either extend the constant to those two branches or drop the claim. No
+        other concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunk 5 of 9 &middot; the constant">
+ public class TriggerWebhookExecutionServiceImpl
+     extends IteratorLoopModeHandler implements io.harness.pms.triggers.webhook.service.TriggerWebhookExecutionService,
+                                                MongoPersistenceIterator.Handler<TriggerWebhookEvent> {
++  // Events past this many attempts are excluded by the iterator filter below, so they are never processed again.
++  private static final int MAX_ATTEMPTS = 2;
++
+   @Inject private PersistenceIteratorFactory persistenceIteratorFactory;
+   @Inject private MongoTemplate mongoTemplate;
+      </script>
+      <p class="cap">Both filter expanders now read the constant.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunks 6&ndash;7 of 9 &middot; iterator filters">
+             .filterExpander(query
+                 -> query.addCriteria(new Criteria()
+                                          .and(TriggerWebhookEventsKeys.attemptCount)
+-                                         .lte(2)
++                                         .lte(MAX_ATTEMPTS)
+                                          .and(TriggerWebhookEventsKeys.processing)
+                                          .is(false)))
+             .schedulingType(REGULAR)
+@@
+                            .filterExpander(query
+                                -> query.addCriteria(new Criteria()
+                                                         .and(TriggerWebhookEventsKeys.attemptCount)
+-                                                        .lte(2)
++                                                        .lte(MAX_ATTEMPTS)
+                                                         .and(TriggerWebhookEventsKeys.processing)
+                                                         .is(false)))
+                            .redistribute(true));
+      </script>
+
+      <p class="cap">The discard branch and the normal response loop, both inside <code>handle</code>.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunk 8 of 9 &middot; handle()">
+       if (discardEmptyOrInvalidPayloadEvents(responseList)) {
++        // Dropping the event makes this its final state - record it so the QUEUED placeholder is not left behind as
++        // the only row for the event.
++        recordEventOutcome(isEmpty(responseList)
++                ? buildEventHistory(event, INVALID_PAYLOAD, INVALID_PAYLOAD.getMessage())
++                : TriggerEventResponseHelper.toEntity(responseList.get(0)),
++            event);
+         ngTriggerService.deleteTriggerWebhookEvent(event);
+       } else if (!result.isMappedToTriggers()) {
+         handleTriggerNotFoundCase(event, result);
+       } else {
+         responseList.forEach(response -> {
+-          Query query = new Query(Criteria.where(TriggerEventHistoryKeys.accountId)
+-                                      .is(response.getAccountId())
+-                                      .and(TriggerEventHistoryKeys.eventCorrelationId)
+-                                      .is(event.getUuid()));
+           TriggerEventHistory triggerEventHistory = TriggerEventResponseHelper.toEntity(response);
+           triggerFailureNotificationHelper.sendTriggerNotification(
+               triggerEventHistory, response.getFinalStatus(), triggerNotificationDataBuilder);
+-          triggerEventHistoryRepository.upsert(triggerEventHistory, query);
++          recordEventOutcome(triggerEventHistory, event);
+         });
+         ngTriggerService.deleteTriggerWebhookEvent(event);
+       }
+      </script>
+
+      <p class="cap">The catch block, where the recording is deliberately swallowed.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunk 8 of 9 &middot; catch">
+     } catch (Exception e) {
+       event.setAttemptCount(event.getAttemptCount() + 1);
+       ngTriggerService.updateTriggerWebhookEvent(event);
+       log.error("Exception while handling webhook event. Please check", e);
++      // processing stays true on this path, so the iterator filter never picks the event up again - the exception is
++      // its final state regardless of attemptCount. Record it now, or the QUEUED placeholder is the only row left.
++      // Failing to record must not propagate - we are already giving up on the event.
++      try {
++        recordEventOutcome(buildEventHistory(event, EXCEPTION_WHILE_PROCESSING,
++                               "Exception while processing the webhook event: " + ExceptionUtils.getMessage(e)),
++            event);
++      } catch (Exception historyException) {
++        log.error(
++            "Failed to record the final state of webhook event with uuid : {}", event.getUuid(), historyException);
++      }
+     }
+   }
+      </script>
+
+      <p class="cap">The trigger-not-found branch &mdash; this is the duplicate-row repro &mdash; and the new private
+      method.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunk 9 of 9">
+   private void handleTriggerNotFoundCase(TriggerWebhookEvent event, WebhookEventProcessingResult result) {
+     if (isScmConnectivityFailed(result) && event.getAttemptCount() < 2) {
+       event.setAttemptCount(event.getAttemptCount() + 1);
+       updateTriggerEventProcessingStatus(event, false);
+       log.error("SCM service is unreachable. Please verify the service is running.");
+     } else {
+-      TriggerEventHistory triggerEventHistory = TriggerEventResponseHelper.toEntity(result.getResponses().get(0));
+-      ngTriggerWebhookExecutionHelper.validateUniqueIdAndParentUniqueId(triggerEventHistory);
+-      triggerEventHistoryRepository.save(triggerEventHistory);
++      // save() would add a row alongside the QUEUED placeholder rather than replacing it, leaving the event reported
++      // as queued. Upsert over the placeholder instead.
++      recordEventOutcome(TriggerEventResponseHelper.toEntity(result.getResponses().get(0)), event);
+       ngTriggerService.deleteTriggerWebhookEvent(event);
+     }
+   }
+ 
++  /**
++   * Records the final state on the row keyed by the event's correlation id, replacing the QUEUED placeholder the
++   * webhook endpoint creates. Every path that stops processing an event must go through this.
++   */
++  private void recordEventOutcome(TriggerEventHistory triggerEventHistory, TriggerWebhookEvent event) {
++    prepareForRecording(triggerEventHistory, event);
++    triggerEventHistoryRepository.upsert(triggerEventHistory, byCorrelationId(event.getAccountId(), event.getUuid()));
++  }
++
+   private boolean isScmConnectivityFailed(WebhookEventProcessingResult result) {
+      </script>
+      <p class="cap">Dropping <code>validateUniqueIdAndParentUniqueId</code> here is safe:
+      <code>TriggerEventExecutionHelper</code> still has five other callers, and
+      <code>setIdentifiersOnInsert</code> covers the insert case.</p>
+
+      <p>Its four import hunks add the helper's statics and drop the now-unused <code>Query</code> and keys
+      imports.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerWebhookExecutionServiceImpl.java" data-stat="hunks 1&ndash;4 of 9 &middot; imports">
+ import static io.harness.mongo.iterator.pojos.SchedulingType.REGULAR;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.EXCEPTION_WHILE_PROCESSING;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.INVALID_PAYLOAD;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SCM_SERVICE_CONNECTION_FAILED;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.buildEventHistory;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.byCorrelationId;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.prepareForRecording;
+ 
+ import static java.time.Duration.ofMinutes;
+@@
+ import io.harness.annotations.dev.OwnedBy;
++import io.harness.exception.ExceptionUtils;
+ import io.harness.iterator.IteratorExecutionHandler;
+@@
+ import io.harness.ngtriggers.beans.entity.TriggerEventHistory;
+-import io.harness.ngtriggers.beans.entity.TriggerEventHistory.TriggerEventHistoryKeys;
+ import io.harness.ngtriggers.beans.entity.TriggerWebhookEvent;
+@@
+ import org.springframework.data.mongodb.core.query.Criteria;
+-import org.springframework.data.mongodb.core.query.Query;
+ 
+ @Singleton
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 8 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The queue-based processor: same consolidation, different retry semantics</h3>
+      <p class="role">the queue-based flow</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>Why this file gates the exception recording on <code>attemptCount == 2</code> while the iterator file
+        records on every exception. The asymmetry is correct, and it is worth understanding rather than flagging:
+        this path resets the event's status to <code>QUEUED</code> before deciding, so the event <i>will</i> be
+        re-delivered, and recording early would write a terminal status the retry then has to undo. The same
+        reasoning reaches the opposite behavior in each file.</p></div>
+      <div class="callout note"><div class="lbl">Flag</div>
+        <p>The literal <code>2</code> in the attempt check here has the same drift risk as the one in the iterator
+        file, and <code>MAX_ATTEMPTS</code> is not visible from this class. No other concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerCustomWebhookExecutionServiceImpl.java" data-stat="hunk 4 of 7 &middot; final-attempt exception">
+     if (event.getAttemptCount() == 2) {
++      // Attempts are exhausted, so nothing will process this event again. Record the failure over the QUEUED
++      // placeholder, otherwise the event is reported as still queued forever.
++      try {
++        recordEventOutcome(buildEventHistory(event, EXCEPTION_WHILE_PROCESSING,
++                               "Exception while processing the webhook event: " + ExceptionUtils.getMessage(e)),
++            event);
++      } catch (Exception historyException) {
++        log.error("Failed to record the final state of webhook event with eventCorrelationId : {}", eventCorrelationId,
++            historyException);
++      }
+       return true;
+     } else {
+       return false;
+     }
+   }
+      </script>
+
+      <p class="cap">The discard branch and the response loop, mirroring the iterator file.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerCustomWebhookExecutionServiceImpl.java" data-stat="hunks 5&ndash;6 of 7 &middot; processResponses()">
+     boolean success;
+     if (discardEmptyOrInvalidPayloadEvents(responseList)) {
++      // The event is being dropped, so this is its final state.
++      recordEventOutcome(isEmpty(responseList) ? buildEventHistory(event, INVALID_PAYLOAD, INVALID_PAYLOAD.getMessage())
++                                               : TriggerEventResponseHelper.toEntity(responseList.get(0)),
++          event);
+       ngTriggerService.deleteTriggerCustomWebhookEvent(event);
+       success = true;
+     } else if (!result.isMappedToTriggers()) {
+       success = handleTriggerNotFoundFailureDueToFailedScmConnectivity(event, result);
+     } else {
+       TriggerCustomWebhookEvent finalEvent = event;
+       responseList.forEach(response -> {
+-        Query query = new Query(Criteria.where(TriggerEventHistoryKeys.accountId)
+-                                    .is(response.getAccountId())
+-                                    .and(TriggerEventHistoryKeys.eventCorrelationId)
+-                                    .is(finalEvent.getUuid()));
+         TriggerEventHistory triggerEventHistory = TriggerEventResponseHelper.toEntity(response);
+         triggerFailureNotificationHelper.sendTriggerNotification(
+             triggerEventHistory, response.getFinalStatus(), triggerNotificationDataBuilder);
+-        triggerEventHistoryRepository.upsert(triggerEventHistory, query);
++        recordEventOutcome(triggerEventHistory, finalEvent);
+       });
+       ngTriggerService.deleteTriggerCustomWebhookEvent(event);
+       success = true;
+     }
+     return success;
+   }
+      </script>
+
+      <p class="cap">The trigger-not-found branch and the new private method.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerCustomWebhookExecutionServiceImpl.java" data-stat="hunk 7 of 7">
+     } else {
+-      TriggerEventHistory triggerEventHistory = TriggerEventResponseHelper.toEntity(result.getResponses().get(0));
+-      ngTriggerWebhookExecutionHelper.validateUniqueIdAndParentUniqueId(triggerEventHistory);
+-      triggerEventHistoryRepository.save(triggerEventHistory);
++      // Upsert over the placeholder.
++      recordEventOutcome(TriggerEventResponseHelper.toEntity(result.getResponses().get(0)), event);
+       ngTriggerService.deleteTriggerCustomWebhookEvent(event);
+       return true;
+     }
+   }
+ 
++  /**
++   * Records the final state on the row the webhook endpoint already created, keyed the same way. Every path that stops
++   * processing an event must go through this, or the QUEUED placeholder survives as the event's reported state.
++   */
++  private void recordEventOutcome(TriggerEventHistory triggerEventHistory, TriggerCustomWebhookEvent event) {
++    prepareForRecording(triggerEventHistory, event);
++    triggerEventHistoryRepository.upsert(triggerEventHistory, byCorrelationId(event.getAccountId(), event.getUuid()));
++  }
++
+   private boolean isScmConnectivityFailed(WebhookEventProcessingResult result) {
+      </script>
+
+      <p>Its import hunks mirror the iterator file's: add <code>EXCEPTION_WHILE_PROCESSING</code>, the three helper
+      statics, and <code>ExceptionUtils</code>; drop <code>TriggerEventHistoryKeys</code>, <code>Criteria</code>, and
+      <code>Query</code>.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/main/java/io/harness/pms/triggers/webhook/service/impl/TriggerCustomWebhookExecutionServiceImpl.java" data-stat="hunks 1&ndash;3 of 7 &middot; imports">
+ import static io.harness.data.structure.EmptyPredicate.isNotEmpty;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.EXCEPTION_WHILE_PROCESSING;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.INVALID_PAYLOAD;
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.SCM_SERVICE_CONNECTION_FAILED;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.buildEventHistory;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.byCorrelationId;
++import static io.harness.ngtriggers.helpers.TriggerEventHistoryHelper.prepareForRecording;
+ 
+ import static java.util.stream.Collectors.toList;
+ 
+ import io.harness.annotations.dev.OwnedBy;
++import io.harness.exception.ExceptionUtils;
+ import io.harness.ngtriggers.beans.dto.TriggerMappingRequestData;
+@@
+ import io.harness.ngtriggers.beans.entity.TriggerEventHistory;
+-import io.harness.ngtriggers.beans.entity.TriggerEventHistory.TriggerEventHistoryKeys;
+ import io.harness.ngtriggers.beans.entity.TriggerWebhookEvent;
+@@
+ import org.springframework.data.mongodb.core.MongoTemplate;
+-import org.springframework.data.mongodb.core.query.Criteria;
+-import org.springframework.data.mongodb.core.query.Query;
+ 
+ @Singleton
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 9 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Next</div>
+      <h3>The abstraction that lets one helper read both event entities</h3>
+      <p class="role">new read-only interface, plus the two entity declarations</p>
+    </div>
+    <div class="body">
+      <div class="wtr"><div class="lbl">What to review</div>
+        <p>Whether a getter-only interface on two Mongo entities is the right seam, or whether a small DTO built at
+        the call site would couple less. This is a taste call; the interface is minimal and read-only, and it does
+        avoid two near-identical helper overloads.</p></div>
+      <div class="callout clear"><div class="lbl">Flag</div><p>No concerns.</p></div>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerWebhookEventDetails.java" data-stat="new file &middot; +44">
++/**
++ * What the webhook request itself recorded about an in-flight event, which is all the Activity History row can be
++ * built from before any trigger is resolved. The two ingestion paths hold their in-flight events in different
++ * collections - {@link TriggerWebhookEvent} for the iterator based flow, {@link TriggerCustomWebhookEvent} for the
++ * queue based one - but report them through the same row, so both expose the same facts here.
++ */
++@OwnedBy(PIPELINE)
++public interface TriggerWebhookEventDetails {
++  String getUuid();
++
++  String getAccountId();
++
++  String getOrgIdentifier();
++
++  String getProjectIdentifier();
++
++  String getPipelineIdentifier();
++
++  String getTriggerIdentifier();
++
++  String getParentUniqueId();
++
++  String getPayload();
++
++  List<HeaderConfig> getHeaders();
++
++  Long getCreatedAt();
++}
+      </script>
+      <p class="cap">The interface exposes <code>getOrgIdentifier()</code> and <code>getProjectIdentifier()</code>,
+      so the missing backfill is a one-line-each fix with no new plumbing.</p>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerWebhookEvent.java" data-stat="hunk 1 of 1">
+ @HarnessEntity(exportable = true)
+-public class TriggerWebhookEvent implements PersistentEntity, UuidAccess, PersistentRegularIterable, UniqueIdAware {
++public class TriggerWebhookEvent
++    implements PersistentEntity, UuidAccess, PersistentRegularIterable, UniqueIdAware, TriggerWebhookEventDetails {
+   @Id @dev.morphia.annotations.Id String uuid;
+   String payload;
+      </script>
+
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/beans/entity/TriggerCustomWebhookEvent.java" data-stat="hunk 1 of 1">
+ @HarnessEntity(exportable = true)
+-public class TriggerCustomWebhookEvent implements PersistentEntity, UuidAccess, UniqueIdAware {
++public class TriggerCustomWebhookEvent
++    implements PersistentEntity, UuidAccess, UniqueIdAware, TriggerWebhookEventDetails {
+   @Id @dev.morphia.annotations.Id String uuid;
+   String payload;
+      </script>
+
+      <p>The new helper returns a Spring Data <code>Query</code>, so the <code>helpers</code> target needs that
+      dependency directly rather than relying on it arriving transitively.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/main/java/io/harness/ngtriggers/helpers/BUILD.bazel" data-stat="hunk 1 of 1">
+         "@maven//:org_apache_commons_commons_lang3",
++        "@maven//:org_springframework_data_spring_data_mongodb",
+     ],
+ )
+      </script>
+    </div>
+  </div>
+
+  <!-- STEP 10 -->
+  <div class="step">
+    <div class="hdr">
+      <div class="stepno">Last</div>
+      <h3>Tests</h3>
+      <p><code>TriggerEventStatusHelperTest</code> is the strongest thing in the PR and it addresses a root cause
+      rather than a symptom. It enumerates the enum and fails on any value absent from an explicit expectation map,
+      which directly guards the &ldquo;FAILED by elimination&rdquo; constraint that caused the original bug. The
+      full list of remaining coverage gaps is in the <a href="#" data-jump="context">Context</a> section.</p>
+    </div>
+    <div class="body">
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventStatusHelperTest.java" data-stat="new file &middot; the load-bearing test">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testEveryFinalStatusIsDeliberatelyClassified() {
++    Map<TriggerEventResponse.FinalStatus, FinalResponse> expected = expectedClassification();
++
++    Set<TriggerEventResponse.FinalStatus> unclassified = Stream.of(TriggerEventResponse.FinalStatus.values())
++                                                             .filter(status -> !expected.containsKey(status))
++                                                             .collect(Collectors.toSet());
++    assertThat(unclassified)
++        .as("these statuses are not classified, so toStatus() reports them as FAILED by default - add each one to"
++            + " expectedClassification() and, if it is not a failure, to SUCCESS_STATUSES or SKIPPED_STATUSES")
++        .isEmpty();
++
++    expected.forEach((status, finalResponse)
++                         -> assertThat(TriggerEventStatusHelper.toStatus(status).getStatus())
++                                .as("%s is classified as %s", status, finalResponse)
++                                .isEqualTo(finalResponse));
++  }
+      </script>
+
+      <p class="cap">The <code>executionNotAttempted</code> test iterates the whole skipped set rather than listing
+      statuses, so it cannot fall behind the set it is guarding.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventResponseHelperTest.java" data-stat="hunk 2 of 2">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testToEntitySetsExecutionNotAttemptedForEverySkippedStatus() {
++    for (TriggerEventResponse.FinalStatus status : SKIPPED_STATUSES) {
++      TriggerEventResponse response = TriggerEventResponse.builder()
++                                          .accountId(accountId)
++                                          .orgIdentifier(orgId)
++                                          .projectIdentifier(projectId)
++                                          .targetIdentifier(pipelineId)
++                                          .eventCorrelationId(uuid)
++                                          .payload(payload)
++                                          .createdAt(createdAt)
++                                          .finalStatus(status)
++                                          .triggerIdentifier(triggerIdentifier)
++                                          .message(message)
++                                          .build();
++
++      assertThat(triggerEventResponseHelper.toEntity(response).getExecutionNotAttempted())
++          .as("%s is a skipped status, so no execution was attempted", status)
++          .isTrue();
++    }
++  }
+@@
+ import static io.harness.ngtriggers.beans.response.TriggerEventResponse.FinalStatus.TRIGGER_CONFIRMATION_SUCCESSFUL;
++import static io.harness.ngtriggers.beans.response.TriggerEventResponse.SKIPPED_STATUSES;
+ import static io.harness.rule.OwnerRule.ABHIPRANAV;
+ import static io.harness.rule.OwnerRule.AYUSHI_TIWARI;
++import static io.harness.rule.OwnerRule.DHEERAJ;
+ import static io.harness.rule.OwnerRule.MEET;
+      </script>
+
+      <p class="cap">The one assertion flip, and it is a genuine consequence rather than a test being bent to fit.
+      <code>toResponse</code> sets <code>exceptionOccurred</code> to true only when the status is in neither the
+      success nor the skipped set, so moving a header mismatch into the skipped set flips this to false. Confirmed
+      against <code>TriggerEventResponseHelper</code> at <code>source_sha</code>.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/eventmapper/filters/impl/HeaderTriggerFilterTest.java" data-stat="hunk 1 of 1">
+     assertThat(webhookEventMappingResponse.getWebhookEventResponse().getMessage())
+         .isEqualTo("No Trigger matched conditions for payload event for Account: p");
+-    assertThat(webhookEventMappingResponse.getWebhookEventResponse().isExceptionOccurred()).isTrue();
++    // A header-condition mismatch is a deliberate skip, not a failure, so no exception is recorded.
++    assertThat(webhookEventMappingResponse.getWebhookEventResponse().isExceptionOccurred()).isFalse();
+   }
+ }
+      </script>
+
+      <p class="cap">Asserting <code>keySet()</code> has exactly two entries is a good touch &mdash; it would catch
+      an extra criterion narrowing the query and reintroducing the duplicate row.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/helpers/TriggerEventHistoryHelperTest.java" data-stat="new file &middot; 1 of 6 tests">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testByCorrelationIdSelectsTheEventsOwnRow() {
++    Document query = byCorrelationId(ACCOUNT_ID, EVENT_CORRELATION_ID).getQueryObject();
++
++    assertThat(query.get(TriggerEventHistoryKeys.accountId)).isEqualTo(ACCOUNT_ID);
++    assertThat(query.get(TriggerEventHistoryKeys.eventCorrelationId)).isEqualTo(EVENT_CORRELATION_ID);
++    assertThat(query.keySet()).hasSize(2);
++  }
+      </script>
+
+      <p class="cap">The duplicate-row repro. The <code>never().save(any())</code> assertion is exactly the right
+      shape for it &mdash; but note it asserts <code>triggerIdentifier</code> and <code>targetIdentifier</code> and
+      <i>not</i> org or project, which is why the defect above is green.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/test/java/io/harness/pms/triggers/webhook/service/TriggerCustomWebhookExecutionServiceImplTest.java" data-stat="hunk 5 of 5 &middot; arrange collapsed">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testProcessMessageWithNoMatchingTriggerOverwritesQueuedPlaceholder() {
+…    // … arrange: response carries no trigger or pipeline identifier …
++    boolean result = triggerCustomWebhookExecutionService.processMessage(accountId, eventCorrelationId);
++    assertThat(result).isTrue();
++
++    // the real outcome must replace the QUEUED placeholder row, not be inserted alongside it
++    ArgumentCaptor<TriggerEventHistory> captor = ArgumentCaptor.forClass(TriggerEventHistory.class);
++    verify(triggerEventHistoryRepository).upsert(captor.capture(), any());
++    assertThat(captor.getValue().getFinalStatus())
++        .isEqualTo(FinalStatus.NO_MATCHING_TRIGGER_FOR_PAYLOAD_CONDITIONS.toString());
++    verify(triggerEventHistoryRepository, never()).save(any());
++
++    // Activity History filters on these by equality, so the row has to keep the identifiers the request was sent
++    // with - writing the response's nulls over the placeholder would hide the event from that trigger's history.
++    assertThat(captor.getValue().getTriggerIdentifier()).isEqualTo(TRIGGER_IDENTIFIER);
++    assertThat(captor.getValue().getTargetIdentifier()).isEqualTo(PIPELINE_IDENTIFIER);
++    assertThat(captor.getValue().getNgTriggerType()).isEqualTo(NGTriggerType.WEBHOOK);
++  }
+@@
+ package io.harness.pms.triggers.webhook.service;
+ 
++import static io.harness.rule.OwnerRule.DHEERAJ;
+ import static io.harness.rule.OwnerRule.YUVRAJ;
+ 
+ import static org.assertj.core.api.Assertions.assertThat;
+ import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.eq;
++import static org.mockito.Mockito.never;
++import static org.mockito.Mockito.verify;
+ import static org.mockito.Mockito.when;
+@@
+   @InjectMocks TriggerCustomWebhookExecutionServiceImpl triggerCustomWebhookExecutionService;
+ 
++  private static final String TRIGGER_IDENTIFIER = "ctrigger";
++  private static final String PIPELINE_IDENTIFIER = "testpipeline";
++
+   @Test
+   @Owner(developers = YUVRAJ)
+      </script>
+
+      <p class="cap">The iterator catch block, including the point that recording must happen on the failing attempt
+      rather than at the attempt limit.</p>
+      <script type="text/diff" data-file="pipeline-service/service/src/test/java/io/harness/pms/triggers/webhook/service/TriggerWebhookExecutionServiceImplTest.java" data-stat="hunk 3 of 3">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testHandleExceptionRecordsOutcomeOnTheFailingAttempt() {
++    TriggerWebhookEvent event = TriggerWebhookEvent.builder()
++                                    .accountId("accountId")
++                                    .uuid("eventCorrelationId")
++                                    .isSubscriptionConfirmation(false)
++                                    .attemptCount(0)
++                                    .build();
++    doThrow(new InvalidRequestException("scm blew up"))
++        .when(ngTriggerWebhookExecutionHelper)
++        .handleTriggerWebhookEvent(any(), any());
++
++    triggerWebhookExecutionServiceImpl.handle(event);
++
++    ArgumentCaptor<TriggerEventHistory> captor = ArgumentCaptor.forClass(TriggerEventHistory.class);
++    verify(triggerEventHistoryRepository, times(1)).upsert(captor.capture(), any(Query.class));
++    assertThat(captor.getValue().getFinalStatus()).isEqualTo(EXCEPTION_WHILE_PROCESSING.toString());
++    assertThat(captor.getValue().getMessage()).startsWith("Exception while processing the webhook event:");
++    assertThat(captor.getValue().getEventCorrelationId()).isEqualTo("eventCorrelationId");
++    assertThat(event.getAttemptCount()).isEqualTo(1);
++  }
+      </script>
+
+      <p class="cap">The placeholder's insert-only write.</p>
+      <script type="text/diff" data-file="pipeline-service/modules/ng-triggers/src/test/java/io/harness/ngtriggers/resource/NGTriggerWebhookConfigResourceImplTest.java" data-stat="new file &middot; 1 of 2 tests">
++  @Test
++  @Owner(developers = DHEERAJ)
++  @Category(UnitTests.class)
++  public void testQueuedPlaceholderNeverOverwritesARecordedOutcome() {
++    ngTriggerWebhookConfigResource.processWebhookEventV2(
++        ACCOUNT_ID, ORG_ID, PROJECT_ID, PIPELINE_ID, TRIGGER_ID, PAYLOAD, httpHeaders);
++
++    verify(triggerEventHistoryRepository).insertIfAbsent(any(), any());
++    verify(triggerEventHistoryRepository, never()).upsert(any(), any());
++  }
+      </script>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  Generated from the immutable range <code>f147eb456c0f7a97e2a8131e9ef847b3ba9ec95e</code> &rarr;
+  <code>595d64612f21ba435f7d0e859791fd74f4f887c1</code>. All four server-reported stats (4 commits, 19 files, +977,
+  &minus;56) matched the local diff. Coverage audited with <code>diff-metadata.mjs</code> at
+  <code>--unified 3</code>: 46 hunks, 38 shown, 8 accounted for, 0 missing.
+</footer>
+</div>
+
+<button class="toTop" id="toTop">&uarr; Top</button>
+
+<script>
+(function(){
+  // ---- render diff + source blocks from inert script tags ----
+  function fileBar(path, stat, unchanged){
+    var b = document.createElement('div'); b.className = 'fileb';
+    var badge = document.createElement('span');
+    badge.className = 'badge ' + (unchanged ? 'un' : 'ch');
+    badge.textContent = unchanged ? 'unchanged at source_sha' : 'diff';
+    var p = document.createElement('span'); p.className = 'path'; p.textContent = path;
+    b.appendChild(badge); b.appendChild(p);
+    if (stat){ var s = document.createElement('span'); s.className='stat'; s.innerHTML = stat; b.appendChild(s); }
+    return b;
+  }
+  function row(gutter, text, cls){
+    var d = document.createElement('div'); d.className = 'ln ' + cls;
+    var g = document.createElement('span'); g.className = 'g'; g.textContent = gutter;
+    var t = document.createElement('span'); t.className = 't'; t.textContent = text;
+    d.appendChild(g); d.appendChild(t); return d;
+  }
+  function trim(raw){
+    var l = raw.replace(/\t/g,'    ').split('\n');
+    while (l.length && !l[0].trim()) l.shift();
+    while (l.length && !l[l.length-1].trim()) l.pop();
+    return l;
+  }
+  document.querySelectorAll('script[type="text/diff"]').forEach(function(s){
+    var frag = document.createDocumentFragment();
+    frag.appendChild(fileBar(s.dataset.file, s.dataset.stat, false));
+    var box = document.createElement('div'); box.className = 'diff';
+    trim(s.textContent).forEach(function(line){
+      var c = line.charAt(0);
+      if (line.indexOf('@@') === 0)      box.appendChild(row('\u22ee', ' unchanged lines elided', 'hnk'));
+      else if (c === '+')                box.appendChild(row('+', line.slice(1), 'add'));
+      else if (c === '-')                box.appendChild(row('\u2212', line.slice(1), 'del'));
+      else if (c === '\u2026')           box.appendChild(row('\u22ee', line.slice(1), 'elide'));
+      else                               box.appendChild(row('', line.slice(1), 'ctx'));
+    });
+    frag.appendChild(box);
+    s.parentNode.replaceChild(frag, s);
+  });
+  document.querySelectorAll('script[type="text/java"]').forEach(function(s){
+    var frag = document.createDocumentFragment();
+    frag.appendChild(fileBar(s.dataset.file, '', true));
+    var box = document.createElement('div'); box.className = 'srcblk';
+    trim(s.textContent).forEach(function(line){
+      var d = document.createElement('div'); d.className = 'ln';
+      var t = document.createElement('span'); t.className = 't'; t.textContent = line;
+      d.appendChild(t); box.appendChild(d);
+    });
+    frag.appendChild(box);
+    s.parentNode.replaceChild(frag, s);
+  });
+
+  // ---- tabs ----
+  var tabs = [].slice.call(document.querySelectorAll('nav.tabs button'));
+  function show(name, scrollTo){
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', String(b.dataset.t === name)); });
+    document.querySelectorAll('section.panel').forEach(function(p){ p.classList.toggle('on', p.id === name); });
+    if (location.hash.slice(1) !== name) history.replaceState(null, '', '#' + name);
+    if (scrollTo) { var el = document.getElementById(scrollTo);
+      if (el) { el.scrollIntoView({block:'start'}); return; } }
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.t); }); });
+  document.querySelectorAll('[data-jump]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = (a.getAttribute('href') || '').replace('#','');
+      show(a.dataset.jump, target && target !== '#' ? target : null);
+    });
+  });
+  var start = location.hash.slice(1);
+  if (start && document.getElementById(start) && document.getElementById(start).classList.contains('panel')) show(start);
+
+  // ---- back to top ----
+  var btn = document.getElementById('toTop');
+  addEventListener('scroll', function(){ btn.classList.toggle('on', scrollY > 700); });
+  btn.addEventListener('click', function(){ scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+</body>
+</html>
