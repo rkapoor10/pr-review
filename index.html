@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PR #123347 review — Report trigger condition mismatches as skipped</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2128; --bd:#30363d; --bd2:#21262d;
+    --tx:#e6edf3; --tx2:#9198a1; --tx3:#6e7681;
+    --acc:#4493f8; --add-bg:#12261e; --add-bd:#2ea04326; --add-tx:#aff5b4;
+    --del-bg:#25171c; --del-bd:#f8514926; --del-tx:#ffdcd7;
+    --red:#f85149; --amber:#d29922; --green:#3fb950; --purple:#ab7df8;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#ffffff; --panel:#f6f8fa; --panel2:#ffffff; --bd:#d1d9e0; --bd2:#e5e9ee;
+      --tx:#1f2328; --tx2:#59636e; --tx3:#818b98;
+      --acc:#0969da; --add-bg:#e6ffec; --add-bd:#2ea04340; --add-tx:#1f2328;
+      --del-bg:#ffebe9; --del-bd:#f8514940; --del-tx:#1f2328;
+      --red:#cf222e; --amber:#9a6700; --green:#1a7f37; --purple:#8250df;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--acc);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:var(--mono);font-size:.855em;background:var(--panel);
+    border:1px solid var(--bd2);border-radius:5px;padding:.12em .36em}
+  /* ---------- shell ---------- */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px 120px}
+  header.top{border-bottom:1px solid var(--bd);background:var(--panel);
+    padding:26px 0 0;position:relative}
+  .hd{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--tx3);
+    font-weight:650;margin-bottom:9px}
+  h1.title{font-size:25px;line-height:1.3;margin:0 0 14px;font-weight:650;letter-spacing:-.01em}
+  h1.title .pid{color:var(--tx3);font-weight:500}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .chip{font:500 12px/1 var(--mono);color:var(--tx2);background:var(--panel2);
+    border:1px solid var(--bd);border-radius:999px;padding:6px 11px;white-space:nowrap}
+  .chip b{color:var(--tx);font-weight:600}
+  .chip.ok{color:var(--green);border-color:var(--green)}
+  nav.tabs{display:flex;gap:2px;max-width:1180px;margin:0 auto;padding:0 24px}
+  nav.tabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+    color:var(--tx2);font:600 14px/1 inherit;padding:13px 16px;cursor:pointer;
+    display:flex;align-items:center;gap:8px}
+  nav.tabs button:hover{color:var(--tx)}
+  nav.tabs button[aria-selected="true"]{color:var(--tx);border-bottom-color:#fd8c73}
+  nav.tabs .n{font:600 11px/1 var(--mono);background:var(--panel2);border:1px solid var(--bd);
+    border-radius:999px;padding:3px 7px;color:var(--tx2)}
+  section.panel{display:none;padding-top:34px}
+  section.panel.on{display:block}
+  /* ---------- typography ---------- */
+  h2{font-size:20px;margin:40px 0 4px;font-weight:650;letter-spacing:-.01em;
+    padding-bottom:8px;border-bottom:1px solid var(--bd)}
+  h2:first-child{margin-top:0}
+  h3{font-size:15.5px;margin:26px 0 8px;font-weight:650}
+  h4{font-size:13px;margin:20px 0 6px;font-weight:700;color:var(--tx2);
+    letter-spacing:.05em;text-transform:uppercase}
+  p{margin:0 0 13px}
+  ul{margin:0 0 14px;padding-left:22px}
+  li{margin-bottom:7px}
+  .lede{font-size:16.5px;line-height:1.6;color:var(--tx)}
+  /* ---------- callouts ---------- */
+  .callout{border:1px solid var(--bd);border-left-width:3px;border-radius:7px;
+    background:var(--panel);padding:14px 16px;margin:0 0 18px}
+  .callout .lbl{font:700 11px/1 inherit;letter-spacing:.07em;text-transform:uppercase;
+    margin-bottom:7px;display:flex;align-items:center;gap:7px}
+  .callout p:last-child{margin-bottom:0}
+  .blocker{border-left-color:var(--red)} .blocker .lbl{color:var(--red)}
+  .note{border-left-color:var(--amber)} .note .lbl{color:var(--amber)}
+  .clear{border-left-color:var(--green)} .clear .lbl{color:var(--green)}
+  .info{border-left-color:var(--purple)} .info .lbl{color:var(--purple)}
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:0 0 20px;
+    border:1px solid var(--bd);border-radius:7px;overflow:hidden}
+  th{text-align:left;background:var(--panel);font-size:11.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--tx2);padding:9px 12px;border-bottom:1px solid var(--bd)}
+  td{padding:8px 12px;border-bottom:1px solid var(--bd2);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  td.num{text-align:right;font-family:var(--mono);font-size:12.5px;width:66px;white-space:nowrap}
+  td.num.p{color:var(--green)} td.num.m{color:var(--red)}
+  td.fp{font-family:var(--mono);font-size:12px;word-break:break-all;line-height:1.5}
+  tr.test td.fp{color:var(--tx2)}
+  .tag{font:600 10px/1 var(--mono);border:1px solid var(--bd);border-radius:4px;
+    padding:3px 5px;color:var(--tx2);margin-left:6px;vertical-align:1px}
+  /* ---------- flow ---------- */
+  .flow{font-family:var(--mono);font-size:12.5px;line-height:2;background:var(--panel);
+    border:1px solid var(--bd);border-radius:7px;padding:14px 16px;margin:0 0 18px;
+    overflow-x:auto;white-space:pre;color:var(--tx2)}
+  .flow b{color:var(--tx);font-weight:600}
+  /* ---------- step cards ---------- */
+  .step{border:1px solid var(--bd);border-radius:9px;background:var(--panel2);
+    margin:0 0 26px;overflow:hidden}
+  .step>.hdr{padding:16px 18px 0}
+  .step .stepno{font:700 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--tx3);margin-bottom:8px}
+  .step h3{margin:0 0 10px;font-size:17px;letter-spacing:-.005em}
+  .step .role{font-size:13px;color:var(--tx2);margin:-6px 0 12px}
+  .step>.hdr>p:last-child{margin-bottom:16px}
+  .step .body{padding:0 18px}
+  .fileb{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+    background:var(--panel);border:1px solid var(--bd);border-bottom:0;
+    border-radius:7px 7px 0 0;padding:8px 12px;margin-top:16px}
+  .fileb .path{font-family:var(--mono);font-size:12px;word-break:break-all;line-height:1.5}
+  .fileb .badge{font:600 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;
+    border-radius:4px;padding:4px 6px;white-space:nowrap}
+  .fileb .badge.ch{background:var(--add-bd);color:var(--green);border:1px solid var(--add-bd)}
+  .fileb .badge.un{background:var(--panel2);color:var(--purple);border:1px solid var(--bd)}
+  .fileb .stat{margin-left:auto;font:600 11px/1 var(--mono);color:var(--tx3);white-space:nowrap}
+  .diff,.srcblk{border:1px solid var(--bd);border-radius:0 0 7px 7px;overflow-x:auto;
+    margin:0 0 4px;background:var(--panel2)}
+  .diff .ln,.srcblk .ln{display:grid;grid-template-columns:30px 1fr;
+    font-family:var(--mono);font-size:12.15px;line-height:1.62;white-space:pre}
+  .diff .g{color:var(--tx3);text-align:center;user-select:none;
+    border-right:1px solid var(--bd2);font-size:11px}
+  .diff .t{padding:0 12px 0 10px}
+  .diff .add{background:var(--add-bg)} .diff .add .g{color:var(--green)} .diff .add .t{color:var(--add-tx)}
+  .diff .del{background:var(--del-bg)} .diff .del .g{color:var(--red)} .diff .del .t{color:var(--del-tx)}
+  .diff .ctx .t{color:var(--tx2)}
+  .diff .hnk{background:var(--panel);color:var(--acc)}
+  .diff .hnk .t{color:var(--acc)}
+  .diff .elide{background:var(--panel);font-style:italic}
+  .diff .elide .t{color:var(--tx3)}
+  .srcblk .ln{grid-template-columns:1fr}
+  .srcblk .t{padding:0 12px;color:var(--tx2)}
+  .srcblk{border-left:3px solid var(--purple)}
+  .cap{font-size:12.5px;color:var(--tx3);margin:6px 0 16px;font-style:italic}
+  .wtr{background:var(--panel);border:1px solid var(--bd);border-radius:7px;
+    padding:12px 15px;margin:0 0 14px;font-size:14px}
+  .wtr .lbl{font:700 11px/1 inherit;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--tx2);margin-bottom:6px}
+  .wtr p:last-child{margin-bottom:0}
+  footer{border-top:1px solid var(--bd);margin-top:46px;padding-top:20px;
+    font-size:12.5px;color:var(--tx3)}
+  .toTop{position:fixed;right:22px;bottom:22px;background:var(--panel);color:var(--tx2);
+    border:1px solid var(--bd);border-radius:8px;padding:9px 13px;font:600 12px/1 inherit;
+    cursor:pointer;opacity:0;pointer-events:none;transition:opacity .18s}
+  .toTop.on{opacity:1;pointer-events:auto}
+  @media(max-width:720px){
+    .wrap,.hd,nav.tabs{padding-left:15px;padding-right:15px}
+    h1.title{font-size:21px} nav.tabs{overflow-x:auto}
+    .diff .ln,.srcblk .ln{font-size:11.2px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="hd">
+    <div class="eyebrow">Pull request review &middot; robust mode</div>
+    <h1 class="title"><span class="pid">#123347</span> &nbsp;fix: [PIPE-37426]: Report trigger condition mismatches as skipped and stop orphaning QUEUED webhook events</h1>
+    <div class="chips">
+      <span class="chip"><b>PIPE-35872</b> &rarr; <b>develop</b></span>
+      <span class="chip">Dheeraj Yadav</span>
+      <span class="chip">4 commits</span>
+      <span class="chip">19 files &nbsp;<b style="color:var(--green)">+977</b> / <b style="color:var(--red)">&minus;56</b></span>
+      <span class="chip">merge_base <b>f147eb45</b> &rarr; source <b>595d6461</b></span>
+      <span class="chip ok">audit: 46 hunks &middot; 0 missing</span>
+      <span class="chip"><a href="https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/code/orgs/PROD/projects/Harness_Commons/repos/harness-core/pulls/123347">open in Harness &rarr;</a></span>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true"  data-t="overview">Overview</button>
+    <button role="tab" aria-selected="false" data-t="context">Context <span class="n">frame</span></button>
+    <button role="tab" aria-selected="false" data-t="diff">Diff <span class="n">10 steps</span></button>
+  </nav>
+</header>
+<div class="wrap">
+<!-- ═══════════════════════════ OVERVIEW ═══════════════════════════ -->
+<section class="panel on" id="overview">
+  <div class="callout blocker">
