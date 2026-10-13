@@ -1,7 +1,7 @@
 # AGENTS.md
 
 > **Repository Architecture & Autonomous Agent Protocols**  
-> **Version:** 2.4.0 | **Last Updated:** 2026-10-12 | **Status:** Active
+> **Version:** 2.5.0-rc1 | **Last Updated:** 2026-10-13 | **Status:** Under Review
 
 This document defines the working guidelines, operational boundaries, and system architecture for autonomous AI agents (including Claude, Copilot, and custom LLM runners) operating within this repository. 
 
@@ -50,7 +50,8 @@ Agents should query their internal skill matrix to ensure they possess the requi
 | `skill-sql-migrate` | Database Schema | **High** | Migration Test Suite | `prisma/migrations/` |
 | `skill-api-gen` | OpenAPI / REST | Low | Schema Validation | `src/api/generated/` |
 | `skill-test-coverage` | Jest / Unit Test | Low | Test Runner | `tests/unit/` |
-| `skill-sec-audit` | Dependency & Code Security | **Critical** | SAST Scanner | Security Report |
+| `skill-sec-audit` | Dependency & Code Security | **Critical** | SAST & DAST Scanner | Security & Vulnerability Report |
+| `skill-perf-bench` | Performance & Benchmarks | Medium | Load Testing Harness | Performance Metric Report |
 | `skill-doc-sync` | Docs & Markdown | Low | Linter / Link Check | `docs/`, `*.md` |
 
 ---
@@ -87,7 +88,7 @@ Agents are restricted from modifying core engine logic without explicit high-ris
 
 | Target Directory / Files | Permitted Actions | Approval Level | Max PR Size | Allowed Automated Fixes |
 | :--- | :--- | :---: | :---: | :--- |
-| `src/core/**` | Read, Refactor (Scoped) | Staff Eng Review | < 150 Lines | Type fixes, Dead code removal |
+| `src/core/**` | Read, Refactor (Scoped) | Principal/Staff Eng Review | < 100 Lines | Type fixes, Dead code removal, Small optimizations |
 | `src/api/**` | Read, Append, Refactor | Peer Review | < 300 Lines | Schema updates, Error handling |
 | `src/utils/**` | Full Access | Automated CI | < 500 Lines | Optimization, Complete rewrites |
 | `tests/**` | Full Access | Automated CI | < 500 Lines | Test additions, Mock updates |
@@ -133,7 +134,7 @@ Total allowable execution latency ($L_{total}$) for processing batch telemetry i
 $$L_{total}(n) \le O(n \log n) + \sum_{k=1}^{m} P_k$$
 
 Where:
-- $n$ is the number of ingested telemetry payloads.
+- $n$ is the number of ingested telemetry payloads per second.
 - $m$ is the active pipeline plugin count.
 - $P_k$ represents individual plugin latency overheads where $P_k \le 12\text{ms}$.
 
@@ -141,9 +142,9 @@ Where:
 
 | Operation Type | Max CPU Allocation | Memory Ceiling ($M_{max}$) | Max Execution Time ($T_{max}$) |
 | :--- | :---: | :---: | :---: |
-| Stream Ingestion | 0.5 Cores | 512 MB | 250 ms |
+| Stream Ingestion | 0.5 Cores | 512 MB | 240 ms |
 | Batch Transformation | 2.0 Cores | 2048 MB | 5000 ms |
-| Schema Validation | 0.2 Cores | 128 MB | 50 ms |
+| Schema Validation | 0.2 Cores | 128 MB | 40 ms |
 | Cache Eviction | 0.1 Cores | 64 MB | 10 ms |
 
 ---
@@ -182,7 +183,7 @@ npm run audit:sast
 npx prettier --write "src/**/*.{ts,tsx}" "docs/**/*.md"
 
 # Lint TypeScript code with auto-fix enabled
-npx eslint "src/**/*.{ts,tsx}" --fix
+npx eslint "src/**/*.{ts,tsx}" --fix --max-warnings 0
 ```
 
 ---
@@ -262,7 +263,7 @@ Agents must maintain documentation freshness and state alignment.
     +------------+------------+
                  |
                  v
-    Is Delta > 15 Commits or > 14 Days?
+    Is Delta > 10 Commits or > 7 Days?
                  |
         +--------+--------+
         |                 |
@@ -282,7 +283,7 @@ Agents must maintain documentation freshness and state alignment.
 
 ### Staleness Resolution Protocol
 
-1. **Detection:** When `AGENTS.md` or `CLAUDE.md` drifts from codebase state by more than **15 commits**, mark document status as `STALE`.
+1. **Detection:** When `AGENTS.md` or `CLAUDE.md` drifts from codebase state by more than **10 commits** or **7 days**, mark document status as `STALE`.
 2. **Analysis:** Analyze AST changes in core exports (`src/core/`, `src/api/`).
 3. **Diff Proposal:** Generate suggested updates via non-destructive PR annotations.
 4. **Human Verification:** Require approval from code owners before updating governance docs.
@@ -298,6 +299,7 @@ Agents must complete this automated pre-flight checklist before submitting code 
 - [ ] **Input Sanitization:** Ensure all external HTTP inputs pass through a validation schema.
 - [ ] **Dependency Audit:** Verify no new `npm` packages were added without vulnerability scanning.
 - [ ] **Log Privacy:** Verify that no personally identifiable information (PII) is emitted to stdout/stderr.
+- [ ] **Telemetry Compliance:** Ensure telemetry metrics do not transmit sensitive runtime tokens or environment keys.
 
 ---
 
