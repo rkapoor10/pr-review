@@ -13,8 +13,7 @@ platform-ui-monorepo/
 └── tsconfig.base.json    # Shared TypeScript config
 ```
 
-> **Further reading**: [Architecture](./ARCHITECTURE.md) · [Creating Apps & Packages](./docs/monorepo.md)
-
+> **Fdsfsdfsdf fdfsdfsdfsdf
 ---
 
 ### Setup
@@ -34,8 +33,8 @@ pnpm dev      # Standalone dev server (Vite, port 5173)
 pnpm dev:mfe  # MFE dev server (Webpack, port 4000)
 ```
 
-Other apps in `apps/` expose their own scripts — run them from the app directory
-(e.g. `cd apps/resilience && pnpm dev:mfe`). See each app's README for details.
+Other apps in `apps/` expose their own scripts — run them from dsfsdfsthe app directory
+(e.g. `cd apps/resilience && pnpm dev:mfe`). See ea's README for details.
 
 **IaCM UI 3.0** (`apps/iacm`) is an MFE loaded by harness-core-ui. To run it against QA (Node versions, Unified UI, `CDS_IACM_UI3_MFE`), see [apps/iacm/docs/local-dev-qa.md](./apps/iacm/docs/local-dev-qa.md).
 
@@ -48,7 +47,9 @@ Other apps in `apps/` expose their own scripts — run them from the app directo
 | `pnpm build:mfe` | Production MFE build (kitchen-sink)             |
 | `pnpm test`      | Run all tests                                   |
 | `pnpm lint`      | Lint all apps/packages                          |
-| `pnpm typecheck` | Type-check all apps/packages                    |
+| `pnpm typecheck` | Type-check dsf all apps/packages                    |
+| `pnpm pretty`    | Check Oxfmt formatting                          |
+| `pnpm typecheck` | Type-check dsf all apps/packages                    |
 | `pnpm pretty`    | Check Oxfmt formatting                          |
 
 ---
@@ -59,7 +60,7 @@ Builds and deployments to QA run automatically on every commit through [platform
 
 ## Known Issues & Gotchas
 
-### react-router-dom v5 vs v6 Compatibility
+### react-router-dom v5 vs v6 Compatibilitydsfsd f
 
 platformUI uses **react-router-dom v5**, but `@harnessio/ui` components expect **v6-style NavLink API** (where `className` can be a function receiving `{ isActive }`).
 
@@ -90,7 +91,7 @@ When running as a microfrontend inside `harness-core-ui`, CSS from the host appl
 
 **Solutions**:
 
-1. **Preferred**: Create custom utility classes in canary's `styles.css` with explicit media queries:
+1. **Preferred**: Create custom utility clasfdsfdsfsdfdsses in canary's `styles.css` with explicit media queries:
 
    ```css
    @layer utilities {
@@ -133,8 +134,4 @@ To test changes in both `canary` and `platformUI` simultaneously:
    pnpm dev:mfe  # MFE mode (to test with harness-core-ui)
    ```
 
-4. **For canary's gitness app with webpack MFE**:
-   ```bash
-   cd /path/to/canary
-   pnpm gitness:mfe  # builds packages then starts webpack dev server
-   ```
+
